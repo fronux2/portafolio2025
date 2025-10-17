@@ -1,9 +1,6 @@
 ---
 // src/layouts/Layout.astro
 import '../styles/global.css';
-export let title: string = 'Marcos Muñoz - Portafolio';
-export let description: string = 'Portafolio profesional de Marcos Muñoz, desarrollador web especializado en Astro, React y Node.js. Vivo en Santiago de Chile comuna de San Bernardo.';
-export let url: string = 'https://portafoliomarcosm.netlify.app/'; 
 ---
 
 <!DOCTYPE html>
@@ -11,15 +8,12 @@ export let url: string = 'https://portafoliomarcosm.netlify.app/';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta name="author" content="Marcos Muñoz" />
-  <link rel="icon" type="image/svg+xml" href="/icono-portafolio.svg">
-  <link rel="canonical" href={url} />
-  <meta name="theme-color" content="#0f172a" />
-
-  <!-- Open Graph / Twitter -->
- 
+  <title>Marcos Muñoz - Portafolio</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/icono-portafolio2.svg">
+  <!-- Meta tags SEO -->
+  <meta name="description" content="Portafolio profesional de Marcos Muñoz, desarrollador web especializado  en Astro, React y Node.js.
+   vivo en Santiago de Chile comuna de San Bernardo.">
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans antialiased">
   <div class="min-h-screen flex flex-col">
