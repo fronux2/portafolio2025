@@ -3,7 +3,7 @@
 import '../styles/global.css';
 export let title = 'Marcos Muñoz - Portafolio';
 export let description = 'Portafolio profesional de Marcos Muñoz, desarrollador web especializado en Astro, React y Node.js. Vivo en Santiago de Chile, San Bernardo.';
-export let url = 'https://portafoliomarcosm.netlify.app/';
+export let urlWeb = 'https://portafoliomarcosm.netlify.app/';
 ---
 
 <!DOCTYPE html>
@@ -14,7 +14,19 @@ export let url = 'https://portafoliomarcosm.netlify.app/';
   <title>{title}</title>
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/icono-portafolio2.svg">
-  <link rel="canonical" href={url} />
+  <link rel="canonical" href={urlWeb} />
+
+    <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={urlWeb} />
+  <meta property="og:image" content={`${urlWeb}/images/portafolioWeb.webp`} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${urlWeb}/images/portafolioWeb.webp`} />
 
   <!-- Meta tags SEO -->
   <meta name="description" content={description} />
