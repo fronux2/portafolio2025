@@ -1,16 +1,314 @@
 ---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import IconGithub from '../components/icons/Github.astro';
+import IconLinkedin from '../components/icons/Linkedin.astro';
+import IconTwitter from '../components/icons/Twitter.astro';
+import IconAstro from '../components/icons/Astro.astro';
+import IconReact from '../components/icons/React.astro';
+import IconTailwind from '../components/icons/Tailwind.astro';
+import IconNode from '../components/icons/Node.astro';
+import IconTypescript from '../components/icons/Typescript.astro';
+import IconGit from '../components/icons/Git.astro';
+import IconNextjs from '../components/icons/Nextjs.astro';
+import IconMysql from '../components/icons/Mysql.astro';
+import proyectos  from '../data/proyectos.json';
+
+const categoryColors = {
+  Backend: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+  Frontend: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+  Automatización: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300",
+  "Full Stack": "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+  Mobile: "bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300",
+};
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<Layout>
+  <!-- nav bar -->
+  <section class="text-white p-4 bg-black">
+    <div>
+      <nav>
+        <ul class="flex flex-row gap-7 items-center font-bold justify-center text-2xl">
+          <li><a class="text-white hover:text-primary transition duration-300" href="#sobre-mi">Sobre mi</a></li>
+          <li><a class="text-white hover:text-primary transition duration-300" href="#proyectos">Proyectos</a></li>
+          <li><a class="text-white hover:text-primary transition duration-300" href="#experiencia">Experiencia</a></li>
+          <li><a class="text-white hover:text-primary transition duration-300" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class=" text-white py-24 md:py-32 lg:px-32 px-12 bg-gradient-to-b from-black to-gray-800 ">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fadeIn">Hola, soy <span class="text-accent">Marcos Muñoz</span></h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Desarrollador Web Full Stack especializado en Astro, React y Node.js</p>
+      <div class="flex justify-center gap-4">
+        <a href="#proyectos" class="hover:text-gray-300 border-accent text-accent border px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition duration-300 shadow-lg">
+          Ver proyectos
+        </a>
+        <a href="#contacto" class="text-accent border-accent border hover:text-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition duration-300 shadow-lg">
+          Contactarme
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Mí -->
+  <section id="sobre-mi" class="py-16 bg-gray-50 dark:bg-gray-800 lg:px-32 px-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-16 text-secondary">Sobre Mí</h2>
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/3 flex justify-center">
+          <img src="/public/images/gato-marcos.webp" alt="Foto de perfil" class="rounded-full w-64 h-64 object-cover border-4 border-accent shadow-xl">
+        </div>
+        <div class="md:w-2/3">
+          <p class="text-lg mb-6">
+            Soy un apasionado desarrollador web con 5 años de experiencia creando soluciones digitales innovadoras. 
+            Mi expertise abarca desde el desarrollo frontend con frameworks modernos hasta la construcción de APIs robustas.
+          </p>
+          <p class="text-lg mb-6">
+            Me especializo en <span class="font-semibold text-accent">Astro</span>, <span class="font-semibold text-accent">React</span> y 
+            <span class="font-semibold text-accent">Node.js</span>, combinando performance y experiencia de usuario excepcional.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="https://github.com/fronux2" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:bg-fuchsia-500 p-2 transition duration-300">
+              <IconGithub class="w-6 h-6" />
+            </a>
+            <a href="https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:bg-fuchsia-500 transition duration-300 p-2 flex items-center justify-center">
+              <IconLinkedin class="w-6 h-6" />
+            </a>
+            <a href="#" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:transition-all hover:bg-fuchsia-500 p-2 transition duration-300 ">
+              <IconTwitter class="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section class="py-16 lg:px-32 px-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Mis Habilidades</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {[
+          { name: 'Astro', icon: <IconAstro class="w-10 h-10 mx-auto" /> },
+          { name: 'React', icon: <IconReact class="w-10 h-10 mx-auto" /> },
+          { name: 'Tailwind', icon: <IconTailwind class="w-10 h-10 mx-auto" /> },
+          { name: 'Node.js', icon: <IconNode class="w-10 h-10 mx-auto" /> },
+          { name: 'TypeScript', icon: <IconTypescript class="w-10 h-10 mx-auto" /> },
+          { name: 'Git', icon: <IconGit class="w-10 h-10 mx-auto" /> },
+          { name: 'Next.js', icon: <IconNextjs class="w-10 h-10 mx-auto" /> },
+          { name: 'MySQL', icon: <IconMysql class="w-10 h-10 mx-auto" /> },
+          { name: 'Twitter', icon: <IconTwitter class="w-10 h-10 mx-auto" /> },
+        ].map(skill => (
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
+            <span class="text-3xl mb-2 block">{skill.icon}</span>
+            <h3 class="font-medium text-gray-800 dark:text-gray-200">{skill.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-16 bg-gray-50 dark:bg-gray-800 lg:px-32 px-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Proyectos Destacados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Lista de Proyectos -->
+        {proyectos.map(proyecto => (
+          <article class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition group">
+            <img src={proyecto.image} alt="Sistema de Tickets" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-accent transition">{proyecto.title}</h3>
+                <span
+                    class={`text-sm px-2 py-1 rounded ${
+                      proyecto.category === "Backend"
+                        ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300"
+                        : proyecto.category === "Frontend"
+                        ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300"
+                        : proyecto.category === "Full Stack"
+                        ? "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300"
+                        : proyecto.category === "Automatización"
+                        ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300"
+                        : proyecto.category === "Mobile"
+                        ? "bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300"
+                        : "bg-gray-100 text-gray-800 dark:bg-gray-600 dark:text-gray-200"
+                    }`}
+                  >
+                    {proyecto.category}
+                </span>
+
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                {proyecto.description}
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {proyecto.tags.map(tag => (
+                  <span class="bg-gray-100 dark:bg-gray-600 text-xs px-2 py-1 rounded">{tag}</span>
+                ))}
+              </div>
+              <div class="flex gap-3">
+                <a href={proyecto.links.website} class="text-sm font-medium text-accent hover:underline flex items-center">
+                  Ver Demo
+                </a>
+                <a href={proyecto.links.github} class="text-sm font-medium text-gray-500 hover:text-accent gap-4 transition flex">
+                  <p>Ver Código</p>
+                  <IconGithub class="w-10 h-10 bg-black" />                  
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+        
+      </div>
+      <div class="text-center mt-10">
+        <a href="#" class="inline-flex items-center px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition duration-300">
+          Ver todos los proyectos
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section class="py-16 lg:px-32">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Experiencia</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-8">
+          <!-- Experiencia 1 -->
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="p-3 bg-accent rounded-full text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="w-px h-full bg-gray-300"></div>
+            </div>
+            <div class="flex-1 pb-8">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Desarrollador Full Stack</h3>
+              <p class="text-primary font-medium mb-2">Tech Solutions Inc. • 2021 - Presente</p>
+              <p class="text-gray-600 dark:text-gray-300">
+                Lideré el desarrollo de 3 aplicaciones web completas usando React y Node.js. Implementé mejoras que aumentaron el rendimiento en un 40% y redujeron los tiempos de carga.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experiencia 2 -->
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="p-3 bg-primary rounded-full text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div class="w-px h-full bg-gray-300"></div>
+            </div>
+            <div class="flex-1 pb-8">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Frontend Developer</h3>
+              <p class="text-primary font-medium mb-2">IAIM • 2022</p>
+              <p class="text-gray-600 dark:text-gray-300">
+                Desarrollé un Software que genera certificados en Word desde datos en Excel, con personalización automática.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experiencia 3 -->
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="p-3 bg-secondary rounded-full text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Estudios</h3>
+              <p class="text-primary font-medium mb-2">Duoc UC • 2023</p>
+              <p class="text-gray-600 dark:text-gray-300">
+                Titulado como Analista programador computacional
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-gradient-to-b from-slate-900 to-gray-800 h-5 w-max"></section>
+  <!-- Contacto -->
+  <section id="contacto" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Contacto</h2>
+      <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Información de contacto</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>marcosantonio.muñozg@gmail.com</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>+569 2647 5227</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Santiago, Chile</span>
+            </div>
+          </div>
+          <div class="mt-8">
+            <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Redes Sociales</h3>
+            <div class="flex gap-4">
+              <a href="https://github.com/fronux2" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:bg-fuchsia-500 hover:opacity-90 p-2 transition duration-300">
+                <IconGithub class="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/" class="rounded-full w-12 h-12 flex items-center justify-center bg-fuchsia-400 hover:bg-fuchsia-500 p-2 transition duration-300">
+                <IconLinkedin class="w-5 h-5" />
+              </a>
+              <a href="#" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:opacity-90 hover:bg-fuchsia-500 p-2 transition duration-300">
+                <IconTwitter class="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-lg font-medium mb-2">Nombre</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:bg-gray-700 dark:border-gray-600">
+            </div>
+            <div>
+              <label for="email" class="block text-lg font-medium mb-2">Email</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:bg-gray-700 dark:border-gray-600">
+            </div>
+            <div>
+              <label for="message" class="block text-lg font-medium mb-2">Mensaje</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:bg-gray-700 dark:border-gray-600"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition duration-300">
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

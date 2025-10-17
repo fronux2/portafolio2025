@@ -1,0 +1,37 @@
+[  
+  {
+    "title": "Clon de Web con Next.js",
+    "image": "public/images/web-lobos.webp",
+    "description": "Clon de una web moderna con Next.js, Tailwind y despliegue en Vercel.",
+    "category": "Frontend",
+    "tags": ["Next.js", "Tailwind", "Vercel"],
+    "links": {
+      "docs": "#",
+      "github": "https://github.com/fronux2/rumi-store",
+      "website": "https://rumi-store.vercel.app/"
+    }
+  },
+  {
+    "title": "Generador de Certificados",
+    "image": "/public/images/gato-marcos.webp",
+    "description": "Software que genera certificados en Word desde datos en Excel, con personalización automática.",
+    "category": "Automatización",
+    "tags": ["Python", "ExcelJS", "Docx"],
+    "links": {
+      "docs": "#",
+      "github": "https://github.com/marcosdev/certificados"
+    } 
+  },
+  {
+    "title": "Web minimalista para Freelancers Tattos",
+    "image": "public/images/web-tattos.webp",
+    "description": "Web minimalista para Freelancers Tattos, con una interfaz de usuario moderna y una arquitectura de microservicios.",
+    "category": "Full Stack",
+    "tags": ["Next.js", "Tailwind", "Vercel"],
+    "links": {
+      "docs": "#",
+      "github": "https://github.com/fronux2/web-tattoos",
+      "website": "https://tintapura.netlify.app/"
+    }
+  }
+]
