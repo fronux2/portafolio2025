@@ -33,5 +33,17 @@
       "github": "https://github.com/fronux2/web-tattoos",
       "website": "https://tintapura.netlify.app/"
     }
+  },
+  {
+    "title": "Web de e-commerce con Next.js",
+    "image": "/images/manganihon.webp",
+    "description": "Web de e-commerce con Next.js, Tailwind y despliegue en Vercel.",
+    "category": "Full Stack",
+    "tags": ["Next.js", "Tailwind", "Vercel"],
+    "links": {
+      "docs": "#",
+      "github": "https://github.com/fronux2/tienda-ecommerce",
+      "website": "https://manganihon.vercel.app/"
+    }
   }
 ]
