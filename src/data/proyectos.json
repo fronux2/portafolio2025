@@ -50,7 +50,7 @@
     "title": "Propuesta nueva Web Agroventaspa",
     "image": "/images/agroventaspa.webp",
     "description": "Propuesta nueva Web Agroventaspa la cual consume la api de WP",
-    "category": "Full Stack",
+    "category": "Frontend",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
       "docs": "#",
