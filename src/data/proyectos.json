@@ -45,5 +45,19 @@
       "github": "https://github.com/fronux2/tienda-ecommerce",
       "website": "https://manganihon.vercel.app/"
     }
+  },
+  {
+    "title": "Propuesta nueva Web Agroventaspa",
+    "image": "/images/agroventaspa.webp",
+    "description": "Propuesta nueva Web Agroventaspa la cual consume la api de WP",
+    "category": "Full Stack",
+    "tags": ["Next.js", "Tailwind", "Vercel"],
+    "links": {
+      "docs": "#",
+      "github": "https://github.com/fronux2/agroventaspa",
+      "website": "https://agroventaspa.vercel.app/"
+    }
+
+
   }
 ]
