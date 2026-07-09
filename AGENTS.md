@@ -17,6 +17,7 @@ No lint, format, or typecheck scripts configured. No test framework.
 
 ## Project structure
 - `src/pages/index.astro` — single-page portfolio (sections: Hero, Sobre Mí, Habilidades, Servicios, Proyectos, Experiencia, Contacto)
+- `src/pages/gracias.astro` — página de agradecimiento tras enviar el formulario
 - `src/layouts/Layout.astro` — SEO: JSON-LD, OG tags, canonical URL, meta description
 - `src/styles/global.css` — Tailwind v4 theme tokens + custom utilities
 - `src/data/proyectos.json` — projects array consumed by the Proyectos section
@@ -33,10 +34,11 @@ No lint, format, or typecheck scripts configured. No test framework.
 
 ## Key facts (continued)
 - **WhatsApp button:** floating button in `index.astro` (inline SVG, links to `wa.me/56926475227`)
-- **Contact form:** uses Netlify Forms (`netlify` attribute, `name="contacto"`, hidden `form-name` input)
+- **Contact form:** Netlify Forms (`data-netlify="true"`, `name="contacto"`, `action="/gracias"`); redirige a `/gracias` tras envío exitoso. Notificaciones por email configuradas desde el dashboard de Netlify.
 - **Servicios section:** uses inline SVG icons (no separate components)
 - **SEO:** JSON-LD (Person schema), `og:locale: es_CL`, OG image dimensions, alt text con keywords, `loading="lazy"`
 - **Google Search Console:** verification file in `public/google*.html`
+- **Notificaciones formulario:** Netlify Forms → notificación email enviada a marcosantonio.muñozg@gmail.com
 
 ## Adding projects
 Edit `src/data/proyectos.json`. Each entry needs `title`, `image`, `description`, `category`, `tags[]`, and `links` (with optional `website` and `github`). Category badges use inline ternaries in the template (note: there's a `categoryColors` map in frontmatter that is unused — the template duplicates its logic inline).
