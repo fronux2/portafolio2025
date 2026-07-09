@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
-export let title = 'Marcos Muñoz - Desarrollador Web y Portafolio';
-export let description = 'Soy Marcos Muñoz, desarrollador web especializado en Astro, React y Node.js. Mira mi portafolio y contáctame para crear la web que tu negocio o proyecto necesite. Desde Santiago de Chile, San Bernardo.';
+export let title = 'Marcos Muñoz — Desarrollo Web y Formateo de PC en San Bernardo';
+export let description = 'Desarrollador web en San Bernardo, Chile. Creo tiendas online, páginas web profesionales y ofrezco formateo de Windows con respaldo de información.';
 export let urlWeb = 'https://portafoliomarcosm.netlify.app/';
 ---
 
@@ -17,10 +17,13 @@ export let urlWeb = 'https://portafoliomarcosm.netlify.app/';
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={urlWeb} />
   <meta property="og:image" content={`${urlWeb}/images/portafolioWeb.webp`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
@@ -30,6 +33,27 @@ export let urlWeb = 'https://portafoliomarcosm.netlify.app/';
   <!-- Meta tags SEO -->
   <meta name="description" content={description} />
   <meta name="author" content="Marcos Muñoz" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Marcos Muñoz",
+      "jobTitle": "Desarrollador Web",
+      "url": "{urlWeb}",
+      "image": "{urlWeb}/images/portafolioWeb.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Bernardo",
+        "addressCountry": "CL"
+      },
+      "sameAs": [
+        "https://github.com/fronux2",
+        "https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/"
+      ]
+    }
+  </script>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans antialiased">
   <div class="min-h-screen flex flex-col">
