@@ -3,6 +3,7 @@
 ## Stack
 - **Astro 5** + **Tailwind CSS 4** (CSS-based, no `tailwind.config.js`; uses `@import "tailwindcss"` and `@theme` in `global.css`)
 - Tailwind loaded via `@tailwindcss/vite` plugin in `astro.config.mjs`
+- Sitemap generado automáticamente con `@astrojs/sitemap`
 - TypeScript via `astro/tsconfigs/strict`
 
 ## Commands
@@ -16,10 +17,11 @@ No lint, format, or typecheck scripts configured. No test framework.
 
 ## Project structure
 - `src/pages/index.astro` — single-page portfolio (sections: Hero, Sobre Mí, Habilidades, Servicios, Proyectos, Experiencia, Contacto)
-- `src/layouts/Layout.astro` — base HTML shell with SEO meta, OG tags, canonical URL
+- `src/layouts/Layout.astro` — SEO: JSON-LD, OG tags, canonical URL, meta description
 - `src/styles/global.css` — Tailwind v4 theme tokens + custom utilities
 - `src/data/proyectos.json` — projects array consumed by the Proyectos section
 - `src/components/icons/` — one SVG icon component per technology (Astro, React, Tailwind, etc.)
+- `public/robots.txt` — crawler directives + sitemap reference
 
 ## Key facts
 - **Site language:** Spanish (`lang="es"`, all content in Spanish)
@@ -33,6 +35,8 @@ No lint, format, or typecheck scripts configured. No test framework.
 - **WhatsApp button:** floating button in `index.astro` (inline SVG, links to `wa.me/56926475227`)
 - **Contact form:** uses Netlify Forms (`netlify` attribute, `name="contacto"`, hidden `form-name` input)
 - **Servicios section:** uses inline SVG icons (no separate components)
+- **SEO:** JSON-LD (Person schema), `og:locale: es_CL`, OG image dimensions, alt text con keywords, `loading="lazy"`
+- **Google Search Console:** verification file in `public/google*.html`
 
 ## Adding projects
 Edit `src/data/proyectos.json`. Each entry needs `title`, `image`, `description`, `category`, `tags[]`, and `links` (with optional `website` and `github`). Category badges use inline ternaries in the template (note: there's a `categoryColors` map in frontmatter that is unused — the template duplicates its logic inline).
