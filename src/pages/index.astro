@@ -98,30 +98,6 @@ const categoryColors = {
     </div>
   </section>
 
-  <!-- Habilidades -->
-  <section class="py-16 lg:px-32 px-6">
-    <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Mis Habilidades</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        {[
-          { name: 'Astro', icon: <IconAstro class="w-10 h-10 mx-auto" /> },
-          { name: 'React', icon: <IconReact class="w-10 h-10 mx-auto" /> },
-          { name: 'Tailwind', icon: <IconTailwind class="w-10 h-10 mx-auto" /> },
-          { name: 'Node.js', icon: <IconNode class="w-10 h-10 mx-auto" /> },
-          { name: 'TypeScript', icon: <IconTypescript class="w-10 h-10 mx-auto" /> },
-          { name: 'Git', icon: <IconGit class="w-10 h-10 mx-auto" /> },
-          { name: 'Next.js', icon: <IconNextjs class="w-10 h-10 mx-auto" /> },
-          { name: 'MySQL', icon: <IconMysql class="w-10 h-10 mx-auto" /> },
-        ].map(skill => (
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
-            <span class="text-3xl mb-2 block">{skill.icon}</span>
-            <h3 class="font-medium text-gray-800 dark:text-gray-200">{skill.name}</h3>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- Servicios -->
   <section id="servicios" class="py-16 lg:px-32 px-6 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4">
@@ -178,6 +154,30 @@ const categoryColors = {
             Contáctame
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section class="py-16 lg:px-32 px-6">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Mis Habilidades</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {[
+          { name: 'Astro', icon: <IconAstro class="w-10 h-10 mx-auto" /> },
+          { name: 'React', icon: <IconReact class="w-10 h-10 mx-auto" /> },
+          { name: 'Tailwind', icon: <IconTailwind class="w-10 h-10 mx-auto" /> },
+          { name: 'Node.js', icon: <IconNode class="w-10 h-10 mx-auto" /> },
+          { name: 'TypeScript', icon: <IconTypescript class="w-10 h-10 mx-auto" /> },
+          { name: 'Git', icon: <IconGit class="w-10 h-10 mx-auto" /> },
+          { name: 'Next.js', icon: <IconNextjs class="w-10 h-10 mx-auto" /> },
+          { name: 'MySQL', icon: <IconMysql class="w-10 h-10 mx-auto" /> },
+        ].map(skill => (
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
+            <span class="text-3xl mb-2 block">{skill.icon}</span>
+            <h3 class="font-medium text-gray-800 dark:text-gray-200">{skill.name}</h3>
+          </div>
+        ))}
       </div>
     </div>
   </section>
