@@ -45,6 +45,7 @@ const categoryColors = {
                 p-6 md:p-0 opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto 
                 peer-checked:opacity-100 peer-checked:pointer-events-auto transition-all duration-300">
           <li><a class="text-white hover:text-primary transition duration-300" href="#sobre-mi">Sobre mi</a></li>
+          <li><a class="text-white hover:text-primary transition duration-300" href="#servicios">Servicios</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#proyectos">Proyectos</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#experiencia">Experiencia</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#contacto">Contacto</a></li>
@@ -117,6 +118,45 @@ const categoryColors = {
             <h3 class="font-medium text-gray-800 dark:text-gray-200">{skill.name}</h3>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-16 lg:px-32 px-6 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-16 text-secondary">Servicios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Desarrollo Web -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center">
+          <div class="text-accent mb-4 flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Desarrollo Web</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Tiendas online, páginas producto y catálogos digitales. Sitios rápidos, optimizados para buscadores y pensados para hacer crecer tu negocio.
+          </p>
+          <a href="#contacto" class="inline-block border border-accent text-accent px-6 py-2 rounded-lg font-medium hover:bg-accent hover:text-white transition duration-300">
+            Contáctame
+          </a>
+        </div>
+        <!-- Formateo de Windows -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center">
+          <div class="text-accent mb-4 flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Formateo de Windows</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Formateo e instalación limpia de Windows en tu computador o notebook. Instalación de drivers, programas básicos y optimización del sistema.
+          </p>
+          <a href="#contacto" class="inline-block border border-accent text-accent px-6 py-2 rounded-lg font-medium hover:bg-accent hover:text-white transition duration-300">
+            Contáctame
+          </a>
+        </div>
       </div>
     </div>
   </section>
