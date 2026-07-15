@@ -36,7 +36,11 @@ No lint, format, or typecheck scripts configured. No test framework.
 - **WhatsApp button:** floating button in `index.astro` (inline SVG, links to `wa.me/56926475227`)
 - **Contact form:** Netlify Forms (`data-netlify="true"`, `name="contacto"`, `action="/gracias"`); redirige a `/gracias` tras envío exitoso. Notificaciones por email configuradas desde el dashboard de Netlify.
 - **Servicios section:** uses inline SVG icons (no separate components)
-- **SEO:** JSON-LD (Person schema), `og:locale: es_CL`, OG image dimensions, alt text con keywords, `loading="lazy"`
+- **SEO:** JSON-LD (Person schema via `set:html` + `JSON.stringify`), `og:locale: es_CL`, OG image dimensions, alt text con keywords, `loading="lazy"`
+- **Canonical URL:** `Astro.url.href` (auto-detecta la URL de cada página; no hardcodear)
+- **Site URL base:** `Astro.site.href` (viene de `site` en `astro.config.mjs`; usar para URLs de imagen OG/Twitter/JSON-LD)
+- **Layout props:** `title`, `description`, `noindex` (boolean, default `false`). Usar `Astro.props` para destructurar.
+- **`noindex` prop:** agregar `<meta name="robots" content="noindex, nofollow">` en páginas que no deben indexarse (ej: `/gracias/`)
 - **Google Search Console:** verification file in `public/google*.html`
 - **Notificaciones formulario:** Netlify Forms → notificación email enviada a marcosantonio.muñozg@gmail.com
 
