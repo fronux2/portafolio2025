@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 const { 
-  title = 'Marcos Muñoz — Desarrollo Web y Formateo de PC en San Bernardo',
-  description = 'Desarrollador web en San Bernardo, Chile. Creo tiendas online, páginas web profesionales y ofrezco formateo de Windows con respaldo de información.',
+  title = 'Marcos Muñoz — Desarrollo Web en San Bernardo',
+  description = 'Desarrollador web en San Bernardo, Chile. Creo tiendas online, páginas web y landing pages profesionales para emprendedores y pequeños negocios.',
   noindex = false
 } = Astro.props;
 
@@ -54,6 +54,18 @@ const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, '') : 'https://porta
       "https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/"
     ]
   })} />
+
+  {import.meta.env.PROD && (
+    <>
+      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-6HZDWVV3GP"></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6HZDWVV3GP');
+      </script>
+    </>
+  )}
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans antialiased">
   <div class="min-h-screen flex flex-col">

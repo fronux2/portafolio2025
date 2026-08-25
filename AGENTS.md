@@ -42,7 +42,7 @@ No lint, format, or typecheck scripts configured. No test framework.
 - **Layout props:** `title`, `description`, `noindex` (boolean, default `false`). Usar `Astro.props` para destructurar.
 - **`noindex` prop:** agregar `<meta name="robots" content="noindex, nofollow">` en páginas que no deben indexarse (ej: `/gracias/`)
 - **Google Search Console:** verification file in `public/google*.html`
-- **Notificaciones formulario:** Netlify Forms → notificación email enviada a marcosantonio.muñozg@gmail.com
+- **Notificaciones formulario:** Netlify Forms → notificación email enviada a marcosantonio.munozg@gmail.com
 
 ## Adding projects
 Edit `src/data/proyectos.json`. Each entry needs `title`, `image`, `description`, `category`, `tags[]`, and `links` (with optional `website` and `github`). Category badges use inline ternaries in the template (note: there's a `categoryColors` map in frontmatter that is unused — the template duplicates its logic inline).

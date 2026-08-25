@@ -1,4 +1,4 @@
-[  
+[
   {
     "title": "Clon de Web con Next.js",
     "image": "/images/web-lobos.webp",
@@ -6,7 +6,6 @@
     "category": "Frontend",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
-      "docs": "#",
       "github": "https://github.com/fronux2/rumi-store",
       "website": "https://rumi-store.vercel.app/"
     }
@@ -18,9 +17,8 @@
     "category": "Automatización",
     "tags": ["Python", "ExcelJS", "Docx"],
     "links": {
-      "docs": "#",
       "github": "https://github.com/fronux2/generator-word"
-    } 
+    }
   },
   {
     "title": "Web minimalista para Freelancers Tattos",
@@ -29,7 +27,6 @@
     "category": "Full Stack",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
-      "docs": "#",
       "github": "https://github.com/fronux2/web-tattoos",
       "website": "https://tintapura.netlify.app/"
     }
@@ -41,7 +38,6 @@
     "category": "Full Stack",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
-      "docs": "#",
       "github": "https://github.com/fronux2/tienda-ecommerce",
       "website": "https://manganihon.vercel.app/"
     }
@@ -53,11 +49,8 @@
     "category": "Frontend",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
-      "docs": "#",
       "github": "https://github.com/fronux2/agroventaspa",
       "website": "https://agroventaspa.vercel.app/"
     }
-
-
   }
 ]
