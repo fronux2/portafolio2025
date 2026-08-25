@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Página no encontrada — Marcos Muñoz" description="La página que buscas no existe." noindex={true}>
+  <section class="flex-1 flex items-center justify-center px-4 py-24 text-center">
+    <div class="max-w-lg">
+      <p class="text-7xl font-bold text-accent mb-4">404</p>
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Esta página no existe</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        Puede que el link esté mal escrito o que la página se haya movido. Volvamos al inicio.
+      </p>
+      <a
+        href="/"
+        class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-medium hover:bg-accent/90 transition duration-300"
+      >
+        Volver al inicio
+      </a>
+    </div>
+  </section>
+</Layout>
