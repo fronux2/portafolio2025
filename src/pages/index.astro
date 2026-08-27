@@ -14,11 +14,9 @@ import IconMysql from '../components/icons/Mysql.astro';
 import proyectos  from '../data/proyectos.json';
 
 const categoryColors = {
-  Backend: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
   Frontend: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
   Automatización: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300",
   "Full Stack": "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
-  Mobile: "bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300",
 };
 
 ---
@@ -48,6 +46,7 @@ const categoryColors = {
           <li><a class="text-white hover:text-primary transition duration-300" href="#servicios">Servicios</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#como-trabajo">Cómo Trabajo</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#precios">Precios</a></li>
+          <li><a class="text-white hover:text-primary transition duration-300" href="#faq">Preguntas Frecuentes</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#proyectos">Proyectos</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#experiencia">Experiencia</a></li>
           <li><a class="text-white hover:text-primary transition duration-300" href="#contacto">Contacto</a></li>
@@ -307,6 +306,47 @@ const categoryColors = {
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-16 text-secondary">Preguntas Frecuentes</h2>
+      <div class="max-w-3xl mx-auto space-y-4">
+        {[
+          {
+            q: '¿Emites boleta o factura?',
+            a: 'Sí, emito boleta de honorarios electrónica por cada proyecto.',
+          },
+          {
+            q: '¿El precio incluye hosting y dominio?',
+            a: 'Sí, el hosting y el dominio están incluidos durante el primer año. A partir del segundo año, la renovación corre por cuenta del cliente.',
+          },
+          {
+            q: '¿Cuántos cambios de diseño puedo pedir?',
+            a: 'Incluyo 2 rondas de ajustes de diseño sin costo adicional antes de pasar a desarrollo. Cambios fuera de esas rondas se cotizan aparte.',
+          },
+          {
+            q: '¿Cómo funciona el pago?',
+            a: 'Se trabaja con 50% de anticipo para iniciar el proyecto y el 50% restante contra entrega.',
+          },
+          {
+            q: '¿Qué necesito para empezar?',
+            a: 'Con contarme tu idea, el rubro de tu negocio y (si tienes) tu logo, textos e imágenes, ya podemos partir. Si no tienes todo listo, te ayudo a definirlo.',
+          },
+        ].map(item => (
+          <details class="group bg-white dark:bg-gray-900 rounded-xl shadow-md open:shadow-lg transition">
+            <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-gray-900 dark:text-white">
+              {item.q}
+              <span class="text-accent text-xl leading-none shrink-0 transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+              {item.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Habilidades -->
   <section class="py-16 lg:px-32 px-6">
     <div class="container mx-auto px-4">
@@ -397,10 +437,10 @@ const categoryColors = {
               <div class="w-px h-full bg-gray-300"></div>
             </div>
             <div class="flex-1 pb-8">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Desarrollador Full Stack</h3>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Desarrollador Freelance</h3>
               <p class="text-primary font-medium mb-2">2025 - Presente</p>
               <p class="text-gray-600 dark:text-gray-300">
-                Ecommerce con Next.js y Tailwind CSS, integrando panel de administración. 
+                Desarrollo sitios y tiendas online para clientes con Next.js y Tailwind CSS, incluyendo paneles de administración a medida.
               </p>
             </div>
           </div>

@@ -12,7 +12,7 @@
   },
   {
     "title": "Automatización de certificados desde Excel",
-    "image": "/images/gato-marcos.webp",
+    "image": "/images/generador-certificados-placeholder.svg",
     "description": "Genera cientos de certificados en Word automáticamente a partir de una planilla, sin trabajo manual.",
     "category": "Automatización",
     "tags": ["Python", "ExcelJS", "Docx"],
