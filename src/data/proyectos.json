@@ -1,8 +1,8 @@
 [
   {
-    "title": "Clon de Web con Next.js",
+    "title": "Web corporativa rápida y moderna",
     "image": "/images/web-lobos.webp",
-    "description": "Clon de una web moderna con Next.js, Tailwind y despliegue en Vercel.",
+    "description": "Migración a Next.js con Tailwind: carga instantánea y despliegue automático en Vercel.",
     "category": "Frontend",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
@@ -11,9 +11,9 @@
     }
   },
   {
-    "title": "Generador de Certificados",
+    "title": "Automatización de certificados desde Excel",
     "image": "/images/gato-marcos.webp",
-    "description": "Software que genera certificados en Word desde datos en Excel, con personalización automática.",
+    "description": "Genera cientos de certificados en Word automáticamente a partir de una planilla, sin trabajo manual.",
     "category": "Automatización",
     "tags": ["Python", "ExcelJS", "Docx"],
     "links": {
@@ -21,9 +21,9 @@
     }
   },
   {
-    "title": "Web minimalista para Freelancers Tattos",
+    "title": "Web minimalista para artistas y freelancers",
     "image": "/images/web-tattos.webp",
-    "description": "Web minimalista para Freelancers Tattos, con una interfaz de usuario moderna y una arquitectura de microservicios.",
+    "description": "Portafolio online elegante para mostrar trabajos y atraer clientes, listo en días.",
     "category": "Full Stack",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
@@ -32,9 +32,9 @@
     }
   },
   {
-    "title": "Web de e-commerce con Next.js",
+    "title": "Tienda online lista para vender",
     "image": "/images/manganihon.webp",
-    "description": "Web de e-commerce con Next.js, Tailwind y despliegue en Vercel.",
+    "description": "E-commerce completo con Next.js: catálogo, carrito y pagos, desplegado en Vercel.",
     "category": "Full Stack",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
@@ -43,9 +43,9 @@
     }
   },
   {
-    "title": "Propuesta nueva Web Agroventaspa",
+    "title": "Rediseño web conectado a WordPress",
     "image": "/images/agroventaspa.webp",
-    "description": "Propuesta nueva Web Agroventaspa la cual consume la api de WP",
+    "description": "Propuesta de sitio moderno que consume el contenido existente vía API de WordPress.",
     "category": "Frontend",
     "tags": ["Next.js", "Tailwind", "Vercel"],
     "links": {
