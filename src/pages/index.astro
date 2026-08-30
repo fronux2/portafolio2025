@@ -14,9 +14,9 @@ import IconMysql from '../components/icons/Mysql.astro';
 import proyectos  from '../data/proyectos.json';
 
 const categoryColors = {
-  Frontend: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
-  Automatización: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300",
-  "Full Stack": "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+  Frontend: "bg-accent/10 text-accent dark:bg-accent/15",
+  Automatización: "bg-secondary/10 text-secondary dark:bg-secondary/15",
+  "Full Stack": "bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary",
 };
 
 ---
@@ -24,32 +24,33 @@ const categoryColors = {
 
 <Layout>
   <!-- nav bar -->
-  <section class="text-white p-4 bg-black">
+  <section class="text-white p-4 bg-black/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto">
       <nav class="flex items-center lg:justify-center justify-end pr-6">
 
         <!-- Botón menú móvil -->
         <input id="menu-toggle" type="checkbox" class="hidden peer" />
-        <label for="menu-toggle" class="cursor-pointer md:hidden flex flex-col gap-1">
-          <span class="block w-6 h-0.5 bg-white"></span>
-          <span class="block w-6 h-0.5 bg-white"></span>
-          <span class="block w-6 h-0.5 bg-white"></span>
+        <label for="menu-toggle" class="cursor-pointer md:hidden flex flex-col gap-1.5 p-2 -mr-2">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 peer-checked:translate-y-2 peer-checked:rotate-45"></span>
+          <span class="block w-6 h-0.5 bg-white transition-opacity duration-300"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
         </label>
 
         <!-- Menú -->
         <ul
-          class="flex flex-col md:flex-row gap-6 md:gap-8 font-bold text-lg md:text-2xl items-center 
-                justify-center absolute md:static left-0 top-16 w-full md:w-auto bg-black md:bg-transparent 
-                p-6 md:p-0 opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto 
-                peer-checked:opacity-100 peer-checked:pointer-events-auto transition-all duration-300">
-          <li><a class="text-white hover:text-primary transition duration-300" href="#sobre-mi">Sobre mi</a></li>
-          <li><a class="text-white hover:text-primary transition duration-300" href="#servicios">Servicios</a></li>
-          <li><a class="text-white hover:text-primary transition duration-300" href="#como-trabajo">Cómo Trabajo</a></li>
-          <li><a class="text-white hover:text-primary transition duration-300" href="#precios">Precios</a></li>
-          <li><a class="text-white hover:text-primary transition duration-300" href="#faq">Preguntas Frecuentes</a></li>
-          <li><a class="text-white hover:text-primary transition duration-300" href="#proyectos">Proyectos</a></li>
-          <li><a class="text-white hover:text-primary transition duration-300" href="#experiencia">Experiencia</a></li>
-          <li><a class="text-white hover:text-primary transition duration-300" href="#contacto">Contacto</a></li>
+          class="flex flex-col md:flex-row gap-6 md:gap-8 font-semibold text-base md:text-sm items-center
+                justify-center absolute md:static left-0 top-full w-full md:w-auto bg-black md:bg-transparent
+                p-6 md:p-0 opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto
+                peer-checked:opacity-100 peer-checked:pointer-events-auto transition-all duration-300
+                border-b border-white/10 md:border-0">
+          <li><a class="text-gray-300 hover:text-accent transition duration-300" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="text-gray-300 hover:text-accent transition duration-300" href="#servicios">Servicios</a></li>
+          <li><a class="text-gray-300 hover:text-accent transition duration-300" href="#como-trabajo">Cómo Trabajo</a></li>
+          <li><a class="text-gray-300 hover:text-accent transition duration-300" href="#precios">Precios</a></li>
+          <li><a class="text-gray-300 hover:text-accent transition duration-300" href="#faq">Preguntas Frecuentes</a></li>
+          <li><a class="text-gray-300 hover:text-accent transition duration-300" href="#proyectos">Proyectos</a></li>
+          <li><a class="text-gray-300 hover:text-accent transition duration-300" href="#experiencia">Experiencia</a></li>
+          <li><a class="rounded-full bg-accent text-black px-4 py-1.5 hover:bg-accent/90 transition duration-300" href="#contacto">Contacto</a></li>
         </ul>
       </nav>
     </div>
@@ -65,42 +66,46 @@ const categoryColors = {
   </script>
 
   <!-- Hero Section -->
-  <section class=" text-white py-24 md:py-32 lg:px-32 px-6 bg-gradient-to-b from-black to-gray-800 ">
+  <section class="text-white py-28 md:py-40 lg:px-32 px-6 bg-gradient-to-b from-black to-gray-800">
     <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fadeIn">Hola, soy <span class="text-accent">Marcos Muñoz</span></h1>
-      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Desarrollo web profesional en San Bernardo — tiendas online, páginas web y landing pages</p>
-      <div class="flex justify-center gap-4">
-        <a href="#proyectos" class="hover:text-gray-300 border-accent text-accent border px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition duration-300 shadow-lg">
-          Ver proyectos
-        </a>
-        <a href="#contacto" class="hover:text-gray-300 border-accent text-accent border px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition duration-300 shadow-lg">
+      <p class="text-accent text-xs md:text-sm font-semibold uppercase tracking-[0.2em] mb-5 animate-fadeIn">Desarrollo Web · San Bernardo, Chile</p>
+      <h1 class="text-white text-4xl md:text-6xl mb-5 animate-fadeIn">Hola, soy <span class="text-accent">Marcos Muñoz</span></h1>
+      <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto text-balance">Tiendas online, páginas web y landing pages que ayudan a tu negocio a vender más.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#contacto" class="bg-accent text-black px-7 py-3 rounded-lg font-semibold hover:bg-accent/90 active:scale-[0.97] transition duration-300 shadow-lg shadow-accent/20">
           Contactarme
+        </a>
+        <a href="#proyectos" class="border border-white/20 text-white px-7 py-3 rounded-lg font-semibold hover:bg-white/10 active:scale-[0.97] transition duration-300">
+          Ver proyectos
         </a>
       </div>
     </div>
   </section>
 
   <!-- Sobre Mí -->
-  <section id="sobre-mi" class="py-16 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
+  <section id="sobre-mi" class="py-20 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-16 text-secondary">Sobre Mí</h2>
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Sobre Mí</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
       <div class="flex flex-col md:flex-row gap-12 items-center">
         <div class="md:w-1/3 flex justify-center">
-          <img src="/images/gato-marcos.webp" alt="Marcos Muñoz — desarrollador web en San Bernardo" class="rounded-full w-64 h-64 object-cover border-4 border-accent shadow-xl">
+          <img src="/images/gato-marcos.webp" alt="Marcos Muñoz — desarrollador web en San Bernardo" class="rounded-full w-64 h-64 object-cover border-4 border-white dark:border-gray-700 shadow-xl ring-1 ring-accent/30">
         </div>
         <div class="md:w-2/3">
-          <p class="text-lg mb-6">
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             Soy Marcos Muñoz, desarrollador web en San Bernardo, Chile. Me especializo en crear tiendas online y sitios web profesionales para emprendedores y pequeños negocios que quieren vender más por internet.
           </p>
-          <p class="text-lg mb-6">
-            ¿Necesitas <strong class="text-accent">crear una página web en San Bernardo</strong>? Mi objetivo es que tengas un sitio que no solo se vea bien, sino que <span class="font-semibold text-accent">atraiga clientes y genere ventas</span>. Sitios rápidos, optimizados para buscadores y pensados para que tu negocio crezca sin complicaciones.
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            ¿Necesitas <strong class="text-gray-900 dark:text-white font-semibold">crear una página web en San Bernardo</strong>? Mi objetivo es que tengas un sitio que no solo se vea bien, sino que <span class="font-semibold text-gray-900 dark:text-white">atraiga clientes y genere ventas</span>. Sitios rápidos, optimizados para buscadores y pensados para que tu negocio crezca sin complicaciones.
           </p>
-          <div class="flex gap-4 justify-center md:justify-start">
-            <a href="https://github.com/fronux2" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:bg-fuchsia-500 p-2 transition duration-300">
-              <IconGithub class="w-6 h-6" />
+          <div class="flex gap-3 justify-center md:justify-start">
+            <a href="https://github.com/fronux2" class="rounded-full w-11 h-11 flex items-center justify-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-accent hover:text-accent transition duration-300">
+              <IconGithub class="w-5 h-5" />
             </a>
-            <a href="https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:bg-fuchsia-500 transition duration-300 p-2 flex items-center justify-center">
-              <IconLinkedin class="w-6 h-6" />
+            <a href="https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/" class="rounded-full w-11 h-11 flex items-center justify-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-accent hover:text-accent transition duration-300">
+              <IconLinkedin class="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -109,18 +114,21 @@ const categoryColors = {
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-16 lg:px-32 px-6 bg-white dark:bg-gray-900">
+  <section id="servicios" class="py-20 lg:px-32 px-6 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-16 text-secondary">Servicios</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Servicios</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         <!-- Tiendas Online -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center">
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md hover:border-accent/40 hover:-translate-y-0.5 transition duration-300 text-center">
           <div class="text-accent mb-4 flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Tiendas Online</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Tiendas Online</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
             E-commerce a medida, catálogos digitales y carro de compras. Sitios rápidos, optimizados para buscadores y pensados para vender más.
           </p>
@@ -132,13 +140,13 @@ const categoryColors = {
           </a>
         </div>
         <!-- Páginas Web y Landing Pages -->
-        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center">
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md hover:border-accent/40 hover:-translate-y-0.5 transition duration-300 text-center">
           <div class="text-accent mb-4 flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Páginas Web y Landing Pages</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Páginas Web y Landing Pages</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
             Sitios profesionales para dar presencia digital a tu negocio o proyecto, optimizados para que tus clientes te encuentren en Google.
           </p>
@@ -154,38 +162,41 @@ const categoryColors = {
   </section>
 
   <!-- Cómo Trabajo -->
-  <section id="como-trabajo" class="py-16 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
+  <section id="como-trabajo" class="py-20 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-16 text-secondary">Cómo Trabajo</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Cómo Trabajo</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto relative">
         <!-- Paso 1 -->
-        <div class="text-center">
-          <div class="w-14 h-14 rounded-full bg-accent text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">1</div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cotización</h3>
+        <div class="text-center relative">
+          <div class="w-12 h-12 rounded-full bg-accent text-black text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Cotización</h3>
           <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             Me contás tu idea por WhatsApp o el formulario de contacto. En menos de 24h te respondo con precio y plazo exacto.
           </p>
         </div>
         <!-- Paso 2 -->
-        <div class="text-center">
-          <div class="w-14 h-14 rounded-full bg-accent text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">2</div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Diseño</h3>
+        <div class="text-center relative">
+          <div class="w-12 h-12 rounded-full bg-accent text-black text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Diseño</h3>
           <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             Antes de programar nada, te muestro cómo va a quedar tu sitio. Ajustamos el diseño hasta que te guste.
           </p>
         </div>
         <!-- Paso 3 -->
-        <div class="text-center">
-          <div class="w-14 h-14 rounded-full bg-accent text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">3</div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Desarrollo</h3>
+        <div class="text-center relative">
+          <div class="w-12 h-12 rounded-full bg-accent text-black text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Desarrollo</h3>
           <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             Construyo tu web y te voy mostrando avances en el camino, no recién al final.
           </p>
         </div>
         <!-- Paso 4 -->
-        <div class="text-center">
-          <div class="w-14 h-14 rounded-full bg-accent text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">4</div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Entrega</h3>
+        <div class="text-center relative">
+          <div class="w-12 h-12 rounded-full bg-accent text-black text-lg font-bold flex items-center justify-center mx-auto mb-5">4</div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Entrega</h3>
           <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             Publico el sitio, te enseño a usarlo y queda listo para recibir clientes.
           </p>
@@ -195,110 +206,114 @@ const categoryColors = {
   </section>
 
   <!-- Precios -->
-  <section id="precios" class="py-16 bg-white dark:bg-gray-900 lg:px-32 px-6">
+  <section id="precios" class="py-20 bg-white dark:bg-gray-900 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-4 text-secondary">Precios</h2>
-      <p class="text-center text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto">
+      <div class="text-center mb-4">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Precios</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
+      <p class="text-center text-gray-600 dark:text-gray-300 mb-14 max-w-2xl mx-auto text-balance">
         Valores de referencia para partir. El precio final depende del alcance de tu proyecto, escríbeme y te doy una cotización exacta.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-stretch">
         <!-- Landing Page -->
-        <div class="flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Landing Page</h3>
-          <p class="text-3xl font-bold text-accent mb-1">Desde $80.000</p>
+        <div class="flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition text-center">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Landing Page</h3>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1 tabular-nums">Desde $80.000</p>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Entrega en 5-7 días</p>
           <div class="text-gray-600 dark:text-gray-300 mb-8 text-left space-y-2 flex-1">
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>1 página</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Diseño responsive</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Formulario de contacto</span>
             </p>
           </div>
-          <a href="#contacto" class="inline-block border border-accent text-accent px-6 py-2 rounded-lg font-medium hover:bg-accent hover:text-white transition duration-300">
+          <a href="#contacto" class="inline-block border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 px-6 py-2 rounded-lg font-medium hover:border-accent hover:text-accent transition duration-300">
             Contáctame
           </a>
         </div>
         <!-- Sitio Web / Catálogo -->
-        <div class="flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center border-2 border-accent">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Sitio Web / Catálogo</h3>
-          <p class="text-3xl font-bold text-accent mb-1">Desde $150.000</p>
+        <div class="relative flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg transition text-center border-2 border-accent">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full">Más elegido</span>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 mt-2">Sitio Web / Catálogo</h3>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1 tabular-nums">Desde $150.000</p>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Entrega en 7-12 días</p>
           <div class="text-gray-600 dark:text-gray-300 mb-8 text-left space-y-2 flex-1">
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Varias secciones o páginas</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Catálogo de productos o servicios</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Optimizado para buscadores (SEO)</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Formulario de contacto</span>
             </p>
           </div>
-          <a href="#contacto" class="inline-block bg-accent text-white px-6 py-2 rounded-lg font-medium hover:bg-accent/90 transition duration-300">
+          <a href="#contacto" class="inline-block bg-accent text-black px-6 py-2 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
             Contáctame
           </a>
         </div>
         <!-- Tienda Online -->
-        <div class="flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tienda Online</h3>
-          <p class="text-3xl font-bold text-accent mb-1">Desde $280.000</p>
+        <div class="flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition text-center">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Tienda Online</h3>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1 tabular-nums">Desde $280.000</p>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Entrega en 15-20 días</p>
           <div class="text-gray-600 dark:text-gray-300 mb-8 text-left space-y-2 flex-1">
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Catálogo de productos</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Carro de compras</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Integración de pagos</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Panel de administración</span>
             </p>
           </div>
-          <a href="#contacto" class="inline-block border border-accent text-accent px-6 py-2 rounded-lg font-medium hover:bg-accent hover:text-white transition duration-300">
+          <a href="#contacto" class="inline-block border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 px-6 py-2 rounded-lg font-medium hover:border-accent hover:text-accent transition duration-300">
             Contáctame
           </a>
         </div>
         <!-- Proyecto a medida -->
-        <div class="flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-lg transition text-center">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Proyecto a Medida</h3>
-          <p class="text-3xl font-bold text-accent mb-1">Cotización</p>
+        <div class="flex flex-col bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition text-center">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Proyecto a Medida</h3>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1">Cotización</p>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Plazo según alcance</p>
           <div class="text-gray-600 dark:text-gray-300 mb-8 text-left space-y-2 flex-1">
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Funcionalidades personalizadas</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Integraciones a medida</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="text-green-500 shrink-0">✔</span>
+              <span class="text-accent shrink-0">✔</span>
               <span>Alcance definido contigo</span>
             </p>
           </div>
-          <a href="#contacto" class="inline-block border border-accent text-accent px-6 py-2 rounded-lg font-medium hover:bg-accent hover:text-white transition duration-300">
+          <a href="#contacto" class="inline-block border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 px-6 py-2 rounded-lg font-medium hover:border-accent hover:text-accent transition duration-300">
             Cotizar proyecto
           </a>
         </div>
@@ -307,10 +322,13 @@ const categoryColors = {
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-16 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
+  <section id="faq" class="py-20 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-16 text-secondary">Preguntas Frecuentes</h2>
-      <div class="max-w-3xl mx-auto space-y-4">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Preguntas Frecuentes</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-3">
         {[
           {
             q: '¿Emites boleta o factura?',
@@ -333,12 +351,12 @@ const categoryColors = {
             a: 'Con contarme tu idea, el rubro de tu negocio y (si tienes) tu logo, textos e imágenes, ya podemos partir. Si no tienes todo listo, te ayudo a definirlo.',
           },
         ].map(item => (
-          <details class="group bg-white dark:bg-gray-900 rounded-xl shadow-md open:shadow-lg transition">
-            <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-gray-900 dark:text-white">
+          <details class="group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm open:shadow-md open:border-accent/30 transition">
+            <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-5 md:p-6 font-semibold text-gray-900 dark:text-white rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/60 transition">
               {item.q}
-              <span class="text-accent text-xl leading-none shrink-0 transition-transform group-open:rotate-45">+</span>
+              <span class="text-accent text-xl leading-none shrink-0 transition-transform duration-300 group-open:rotate-45">+</span>
             </summary>
-            <p class="px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p class="px-5 md:px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed">
               {item.a}
             </p>
           </details>
@@ -348,23 +366,26 @@ const categoryColors = {
   </section>
 
   <!-- Habilidades -->
-  <section class="py-16 lg:px-32 px-6">
+  <section class="py-20 bg-white dark:bg-gray-900 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Mis Habilidades</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Mis Habilidades</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {[
-          { name: 'Astro', icon: <IconAstro class="w-10 h-10 mx-auto" /> },
-          { name: 'React', icon: <IconReact class="w-10 h-10 mx-auto" /> },
-          { name: 'Tailwind', icon: <IconTailwind class="w-10 h-10 mx-auto" /> },
-          { name: 'Node.js', icon: <IconNode class="w-10 h-10 mx-auto" /> },
-          { name: 'TypeScript', icon: <IconTypescript class="w-10 h-10 mx-auto" /> },
-          { name: 'Git', icon: <IconGit class="w-10 h-10 mx-auto" /> },
-          { name: 'Next.js', icon: <IconNextjs class="w-10 h-10 mx-auto" /> },
-          { name: 'MySQL', icon: <IconMysql class="w-10 h-10 mx-auto" /> },
+          { name: 'Astro', icon: <IconAstro class="w-9 h-9 mx-auto" /> },
+          { name: 'React', icon: <IconReact class="w-9 h-9 mx-auto" /> },
+          { name: 'Tailwind', icon: <IconTailwind class="w-9 h-9 mx-auto" /> },
+          { name: 'Node.js', icon: <IconNode class="w-9 h-9 mx-auto" /> },
+          { name: 'TypeScript', icon: <IconTypescript class="w-9 h-9 mx-auto" /> },
+          { name: 'Git', icon: <IconGit class="w-9 h-9 mx-auto" /> },
+          { name: 'Next.js', icon: <IconNextjs class="w-9 h-9 mx-auto" /> },
+          { name: 'MySQL', icon: <IconMysql class="w-9 h-9 mx-auto" /> },
         ].map(skill => (
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition text-center">
-            <span class="text-3xl mb-2 block">{skill.icon}</span>
-            <h3 class="font-medium text-gray-800 dark:text-gray-200">{skill.name}</h3>
+          <div class="bg-gray-50 dark:bg-gray-800 p-5 rounded-xl border border-gray-100 dark:border-gray-700 hover:border-accent/40 hover:-translate-y-0.5 transition duration-300 text-center">
+            <span class="mb-3 block">{skill.icon}</span>
+            <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{skill.name}</h3>
           </div>
         ))}
       </div>
@@ -372,33 +393,36 @@ const categoryColors = {
   </section>
 
   <!-- Proyectos -->
-  <section id="proyectos" class="py-16 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
+  <section id="proyectos" class="py-20 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Proyectos Destacados</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Proyectos Destacados</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Lista de Proyectos -->
         {proyectos.map(proyecto => (
-          <article class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition group">
-            <img src={proyecto.image} alt={`Captura del proyecto ${proyecto.title}`} class="w-full h-48 object-cover" loading="lazy" />
+          <article class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition duration-300 group">
+            <img src={proyecto.image} alt={`Captura del proyecto ${proyecto.title}`} class="w-full h-48 object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10" loading="lazy" />
             <div class="p-6">
-              <div class="flex justify-between items-start mb-2">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-accent transition">{proyecto.title}</h3>
+              <div class="flex justify-between items-start gap-3 mb-2">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-accent transition">{proyecto.title}</h3>
                 <span
-                    class={`text-sm px-2 py-1 rounded ${categoryColors[proyecto.category] ?? "bg-gray-100 text-gray-800 dark:bg-gray-600 dark:text-gray-200"}`}
+                    class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${categoryColors[proyecto.category] ?? "bg-gray-100 text-gray-800 dark:bg-gray-600 dark:text-gray-200"}`}
                   >
                     {proyecto.category}
                 </span>
 
               </div>
-              <p class="text-gray-600 dark:text-gray-300 mb-4">
+              <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
                 {proyecto.description}
               </p>
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-2 mb-5">
                 {proyecto.tags.map(tag => (
-                  <span class="bg-gray-100 dark:bg-gray-600 text-xs px-2 py-1 rounded">{tag}</span>
+                  <span class="bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 text-xs px-2 py-1 rounded">{tag}</span>
                 ))}
               </div>
-              <div class="flex gap-3">
+              <div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-gray-600">
                 {proyecto.links.website ? (
                   <a href={proyecto.links.website} class="text-sm font-medium text-accent hover:underline flex items-center">
                     Ver Demo
@@ -407,38 +431,41 @@ const categoryColors = {
                 <span class="text-sm font-medium text-gray-400 flex items-center cursor-not-allowed">
                     Demo no disponible
                   </span>}
-                <a href={proyecto.links.github} class="text-sm font-medium text-gray-500 hover:text-accent gap-4 transition flex">
-                  <p>Ver Código</p>
-                  <IconGithub class="w-10 h-10" />
+                <a href={proyecto.links.github} class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-accent transition flex items-center gap-1.5 ml-auto">
+                  Ver Código
+                  <IconGithub class="w-4 h-4" />
                 </a>
               </div>
             </div>
           </article>
         ))}
-        
+
       </div>
     </div>
   </section>
 
   <!-- Experiencia -->
-  <section class="py-16 lg:px-32">
+  <section id="experiencia" class="py-20 bg-white dark:bg-gray-900 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Experiencia</h2>
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Experiencia</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
       <div class="max-w-3xl mx-auto">
         <div class="space-y-8">
           <!-- Experiencia 1 -->
           <div class="flex gap-6">
             <div class="flex flex-col items-center">
-              <div class="p-3 bg-accent rounded-full text-white">
+              <div class="p-3 bg-accent rounded-full text-black shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <div class="w-px h-full bg-gray-300"></div>
+              <div class="w-px h-full bg-gray-200 dark:bg-gray-700"></div>
             </div>
             <div class="flex-1 pb-8">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Desarrollador Freelance</h3>
-              <p class="text-primary font-medium mb-2">2025 - Presente</p>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Desarrollador Freelance</h3>
+              <p class="text-accent font-semibold text-sm mb-2">2025 - Presente</p>
               <p class="text-gray-600 dark:text-gray-300">
                 Desarrollo sitios y tiendas online para clientes con Next.js y Tailwind CSS, incluyendo paneles de administración a medida.
               </p>
@@ -448,16 +475,16 @@ const categoryColors = {
           <!-- Experiencia 2 -->
           <div class="flex gap-6">
             <div class="flex flex-col items-center">
-              <div class="p-3 bg-primary rounded-full text-white">
+              <div class="p-3 bg-primary rounded-full text-white shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <div class="w-px h-full bg-gray-300"></div>
+              <div class="w-px h-full bg-gray-200 dark:bg-gray-700"></div>
             </div>
             <div class="flex-1 pb-8">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Frontend Developer</h3>
-              <p class="text-primary font-medium mb-2">IAIM • 2022</p>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Frontend Developer</h3>
+              <p class="text-accent font-semibold text-sm mb-2">IAIM • 2022</p>
               <p class="text-gray-600 dark:text-gray-300">
                 Desarrollé un Software que genera certificados en Word desde datos en Excel, con personalización automática.
               </p>
@@ -467,7 +494,7 @@ const categoryColors = {
           <!-- Experiencia 3 -->
           <div class="flex gap-6">
             <div class="flex flex-col items-center">
-              <div class="p-3 bg-secondary rounded-full text-white">
+              <div class="p-3 bg-secondary rounded-full text-white shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -476,8 +503,8 @@ const categoryColors = {
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Estudios</h3>
-              <p class="text-primary font-medium mb-2">Duoc UC • 2023</p>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Estudios</h3>
+              <p class="text-accent font-semibold text-sm mb-2">Duoc UC • 2023</p>
               <p class="text-gray-600 dark:text-gray-300">
                 Titulado como Analista programador computacional
               </p>
@@ -487,63 +514,66 @@ const categoryColors = {
       </div>
     </div>
   </section>
-  <section class="bg-gradient-to-b from-slate-900 to-gray-800 h-5 w-max"></section>
+
   <!-- Contacto -->
-  <section id="contacto" class="py-16 bg-gray-50 dark:bg-gray-800">
+  <section id="contacto" class="py-20 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-28 text-secondary">Contacto</h2>
-      <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl text-gray-900 dark:text-white">Contacto</h2>
+        <span class="mt-3 mx-auto block h-1 w-10 rounded-full bg-accent"></span>
+      </div>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12">
         <div>
-          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Información de contacto</h3>
+          <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white">Información de contacto</h3>
           <div class="space-y-4">
             <div class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <a href="mailto:marcosantonio.munozg@gmail.com" class="hover:text-accent transition">marcosantonio.munozg@gmail.com</a>
+              <a href="mailto:marcosantonio.munozg@gmail.com" class="text-gray-700 dark:text-gray-300 hover:text-accent transition">marcosantonio.munozg@gmail.com</a>
             </div>
             <div class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <a href="tel:+56926475227" class="hover:text-accent transition">+569 2647 5227</a>
+              <a href="tel:+56926475227" class="text-gray-700 dark:text-gray-300 hover:text-accent transition">+569 2647 5227</a>
             </div>
             <div class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span>Santiago, Chile</span>
+              <span class="text-gray-700 dark:text-gray-300">Santiago, Chile</span>
             </div>
           </div>
           <div class="mt-8">
-            <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Redes Sociales</h3>
-            <div class="flex gap-4">
-              <a href="https://github.com/fronux2" class="rounded-full w-12 h-12 bg-fuchsia-400 hover:bg-fuchsia-500 hover:opacity-90 p-2 transition duration-300">
+            <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-white">Redes Sociales</h3>
+            <div class="flex gap-3">
+              <a href="https://github.com/fronux2" class="rounded-full w-11 h-11 flex items-center justify-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-accent hover:text-accent transition duration-300">
                 <IconGithub class="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/" class="rounded-full w-12 h-12 flex items-center justify-center bg-fuchsia-400 hover:bg-fuchsia-500 p-2 transition duration-300">
+              <a href="https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/" class="rounded-full w-11 h-11 flex items-center justify-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-accent hover:text-accent transition duration-300">
                 <IconLinkedin class="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
         <div>
-          <form class="space-y-6" data-netlify="true" name="contacto" method="POST" action="/gracias">
+          <form class="space-y-5" data-netlify="true" name="contacto" method="POST" action="/gracias">
             <input type="hidden" name="form-name" value="contacto" />
             <div>
-              <label for="name" class="block text-lg font-medium mb-2">Nombre</label>
-              <input type="text" name="nombre" id="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:bg-gray-700 dark:border-gray-600">
+              <label for="name" class="block text-sm font-semibold mb-1.5 text-gray-700 dark:text-gray-300">Nombre</label>
+              <input type="text" name="nombre" id="name" required class="w-full px-4 py-2.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition">
             </div>
             <div>
-              <label for="email" class="block text-lg font-medium mb-2">Email</label>
-              <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:bg-gray-700 dark:border-gray-600">
+              <label for="email" class="block text-sm font-semibold mb-1.5 text-gray-700 dark:text-gray-300">Email</label>
+              <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition">
             </div>
             <div>
-              <label for="message" class="block text-lg font-medium mb-2">Mensaje</label>
-              <textarea name="mensaje" id="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:bg-gray-700 dark:border-gray-600"></textarea>
+              <label for="message" class="block text-sm font-semibold mb-1.5 text-gray-700 dark:text-gray-300">Mensaje</label>
+              <textarea name="mensaje" id="message" rows="4" required class="w-full px-4 py-2.5 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition resize-none"></textarea>
             </div>
-            <button type="submit" class="w-full cursor-pointer bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition duration-300">
+            <button type="submit" class="w-full cursor-pointer bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 active:scale-[0.98] transition duration-300">
               Enviar Mensaje
             </button>
           </form>
