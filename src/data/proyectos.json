@@ -11,13 +11,14 @@
     }
   },
   {
-    "title": "Automatización de certificados desde Excel",
-    "image": "/images/generador-certificados-placeholder.svg",
-    "description": "Genera cientos de certificados en Word automáticamente a partir de una planilla, sin trabajo manual.",
+    "title": "Certificados con verificación por QR",
+    "image": "/images/certificados-card.png",
+    "description": "App de escritorio que genera certificados en PDF desde un Excel y una plantilla Word, y los sube automáticamente a la nube. Cada certificado lleva un QR que, al escanearlo, redirige a la web donde se verifica su autenticidad.",
     "category": "Automatización",
-    "tags": ["Python", "ExcelJS", "Docx"],
+    "tags": ["Python", "Tkinter", "Supabase"],
     "links": {
-      "github": "https://github.com/fronux2/generator-word"
+      "github": "https://github.com/fronux2/generator-word",
+      "website": "/certificados"
     }
   },
   {

@@ -425,7 +425,7 @@ const categoryColors = {
               <div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-gray-600">
                 {proyecto.links.website ? (
                   <a href={proyecto.links.website} class="text-sm font-medium text-accent hover:underline flex items-center">
-                    Ver Demo
+                    {proyecto.links.website.startsWith('/') ? 'Ver Detalle' : 'Ver Demo'}
                   </a>
                 ):
                 <span class="text-sm font-medium text-gray-400 flex items-center cursor-not-allowed">

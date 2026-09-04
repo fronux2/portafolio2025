@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IconGithub from '../components/icons/Github.astro';
+import IconSupabase from '../components/icons/Supabase.astro';
+
+const screenshots = [
+  {
+    src: '/images/certificados-app.png',
+    alt: 'Ventana principal del generador de certificados',
+    caption: 'Pantalla principal: eliges el Excel con los datos, la plantilla Word y generas los certificados en PDF.',
+  },
+  {
+    src: '/images/certificados-admin.png',
+    alt: 'Panel de administrador de certificados',
+    caption: 'Panel de administrador: lista de certificados emitidos, con su ID de verificación y el archivo correspondiente en el bucket.',
+  },
+  {
+    src: '/images/certificados-config.png',
+    alt: 'Pantalla de configuración de credenciales de Supabase',
+    caption: 'Configuración con credenciales propias de Supabase, para que cada organización use su propio proyecto y bucket.',
+  },
+];
+---
+
+<Layout
+  title="Certificados con verificación por QR — Marcos Muñoz"
+  description="App de escritorio en Python que genera certificados en PDF desde Excel y Word, con verificación de autenticidad por código QR."
+>
+  <section class="py-20 lg:px-32 px-6 bg-white dark:bg-gray-900 flex-1">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <a href="/#proyectos" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline mb-8">
+        ← Volver a proyectos
+      </a>
+
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Certificados con verificación por QR</h1>
+        <a href="https://github.com/fronux2/generator-word" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-accent transition shrink-0">
+          <IconGithub class="w-5 h-5" />
+          Ver código
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Python</span>
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Tkinter</span>
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Supabase</span>
+      </div>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-14 max-w-3xl">
+        App de escritorio hecha para una entidad que emitía cientos de certificados a mano. A partir de una
+        planilla Excel y una plantilla Word, genera un PDF personalizado por persona, lo sube automáticamente
+        a Supabase Storage y le agrega un <strong class="text-gray-900 dark:text-white font-semibold">código QR único</strong>.
+        Al escanear ese QR, cualquiera es redirigido a la web pública donde puede verificar que el certificado
+        es auténtico.
+      </p>
+
+      <!-- Galería -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {screenshots.map(shot => (
+          <figure class="bg-gray-100 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm">
+            <div class="h-56 flex items-center justify-center p-3">
+              <img src={shot.src} alt={shot.alt} class="max-w-full max-h-full object-contain rounded outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10" loading="lazy" />
+            </div>
+            <figcaption class="p-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              {shot.caption}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <!-- Cómo funciona -->
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Cómo funciona</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">1</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Se elige un Excel (una fila por persona) y una plantilla Word con marcadores que se reemplazan
+            con los datos de cada fila.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">2</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            La app arma un documento Word por persona y lo convierte automáticamente a PDF.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">3</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Cada PDF se sube a un bucket público de Supabase Storage, quedando disponible con una URL propia.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">4</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Se genera un código QR con esa URL y se inserta en el certificado: al escanearlo, se verifica su
+            autenticidad al instante.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 p-5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 mb-16">
+        <IconSupabase class="w-6 h-6 shrink-0 text-gray-600 dark:text-gray-300" />
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Credenciales de <strong class="text-gray-800 dark:text-gray-200">Supabase Storage</strong> configurables desde
+          la propia app, para que cada organización conecte su propio proyecto y bucket. Migrado desde un almacenamiento
+          por FTP.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <a href="/#contacto" class="inline-block bg-accent text-black px-7 py-3 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
+          ¿Necesitas algo similar? Conversemos
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
