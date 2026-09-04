@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Lightbox from '../components/Lightbox.astro';
+import IconGithub from '../components/icons/Github.astro';
+import IconSupabase from '../components/icons/Supabase.astro';
+
+const screenshots = [
+  {
+    src: '/images/manganihon-hero.jpg',
+    alt: 'Página de inicio de la tienda MangaNihon',
+    caption: 'Inicio: presentación de la tienda y llamado a explorar la colección.',
+  },
+  {
+    src: '/images/manganihon-catalogo.jpg',
+    alt: 'Catálogo de mangas con filtros por categoría y serie',
+    caption: 'Catálogo con búsqueda y filtros por categoría y serie, listo para escalar a cientos de productos.',
+  },
+  {
+    src: '/images/manganihon-producto.jpg',
+    alt: 'Ficha de producto con stock, sinopsis y detalles técnicos',
+    caption: 'Ficha de producto con stock en tiempo real, sinopsis, ISBN y demás detalles técnicos.',
+  },
+];
+---
+
+<Layout
+  title="Tienda de mangas con pago real (Webpay) — Marcos Muñoz"
+  description="Tienda online de mangas hecha con Next.js y Supabase: catálogo, carrito, checkout con pago real vía Webpay (Transbank) y panel administrativo completo."
+>
+  <section class="py-20 lg:px-32 px-6 bg-white dark:bg-gray-900 flex-1">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <a href="/#proyectos" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline mb-8">
+        ← Volver a proyectos
+      </a>
+
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Tienda de mangas con pago real (Webpay)</h1>
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="https://manganihon.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
+            Ver sitio en vivo
+          </a>
+          <a href="https://github.com/fronux2/tienda-ecommerce" class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-accent transition">
+            <IconGithub class="w-5 h-5" />
+            Ver código
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Next.js</span>
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Supabase</span>
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Webpay (Transbank)</span>
+      </div>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-14 max-w-3xl">
+        Tienda online de mangas construida como un e-commerce real, no una demo: catálogo con búsqueda y filtros,
+        ficha de producto con stock, carrito y checkout con <strong class="text-gray-900 dark:text-white font-semibold">pago real vía Webpay de Transbank</strong>,
+        el medio de pago más usado en Chile. Incluye además un panel administrativo completo para gestionar
+        productos, series, categorías, usuarios y pedidos.
+      </p>
+
+      <!-- Galería -->
+      <Lightbox images={screenshots} />
+
+      <!-- Funcionalidades -->
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Funcionalidades</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">1</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Catálogo con búsqueda y filtros por categoría y serie, y ficha de producto con stock, sinopsis e ISBN.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">2</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Carrito de compras y checkout con pago real integrado vía Webpay (Transbank).
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">3</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Cuentas de usuario con perfil, direcciones guardadas e historial de pedidos.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">4</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Panel administrativo para gestionar mangas, series, categorías, usuarios y pedidos, con acceso
+            restringido por rol.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 p-5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 mb-16">
+        <IconSupabase class="w-6 h-6 shrink-0 text-gray-600 dark:text-gray-300" />
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Backend con <strong class="text-gray-800 dark:text-gray-200">Supabase</strong> (autenticación por rol y base de datos)
+          y notificaciones por correo en cada compra.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <a href="/#contacto" class="inline-block bg-accent text-black px-7 py-3 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
+          ¿Necesitas algo similar? Conversemos
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

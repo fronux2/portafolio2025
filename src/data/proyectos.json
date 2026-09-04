@@ -35,9 +35,10 @@
   {
     "title": "Tienda online lista para vender",
     "image": "/images/manganihon.webp",
-    "description": "E-commerce completo con Next.js: catálogo, carrito y pagos, desplegado en Vercel.",
+    "description": "E-commerce de mangas con Next.js y Supabase: catálogo, carrito, pago real vía Webpay (Transbank) y panel administrativo completo.",
     "category": "Full Stack",
-    "tags": ["Next.js", "Tailwind", "Vercel"],
+    "tags": ["Next.js", "Supabase", "Webpay"],
+    "detail": "/manganihon",
     "links": {
       "github": "https://github.com/fronux2/tienda-ecommerce",
       "website": "https://manganihon.vercel.app/"

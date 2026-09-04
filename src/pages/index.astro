@@ -403,10 +403,18 @@ const categoryColors = {
         <!-- Lista de Proyectos -->
         {proyectos.map(proyecto => (
           <article class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition duration-300 group">
-            <img src={proyecto.image} alt={`Captura del proyecto ${proyecto.title}`} class="w-full h-48 object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10" loading="lazy" />
+            {proyecto.detail ? (
+              <a href={proyecto.detail}>
+                <img src={proyecto.image} alt={`Captura del proyecto ${proyecto.title}`} class="w-full h-48 object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10" loading="lazy" />
+              </a>
+            ) : (
+              <img src={proyecto.image} alt={`Captura del proyecto ${proyecto.title}`} class="w-full h-48 object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10" loading="lazy" />
+            )}
             <div class="p-6">
               <div class="flex justify-between items-start gap-3 mb-2">
-                <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-accent transition">{proyecto.title}</h3>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-accent transition">
+                  {proyecto.detail ? <a href={proyecto.detail}>{proyecto.title}</a> : proyecto.title}
+                </h3>
                 <span
                     class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${categoryColors[proyecto.category] ?? "bg-gray-100 text-gray-800 dark:bg-gray-600 dark:text-gray-200"}`}
                   >
