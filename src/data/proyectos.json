@@ -16,6 +16,7 @@
     "description": "App de escritorio que genera certificados en PDF desde un Excel y una plantilla Word, y los sube automáticamente a la nube. Cada certificado lleva un QR que, al escanearlo, redirige a la web donde se verifica su autenticidad.",
     "category": "Automatización",
     "tags": ["Python", "Tkinter", "Supabase"],
+    "detail": "/certificados",
     "links": {
       "github": "https://github.com/fronux2/generator-word",
       "website": "/certificados"
