@@ -20,6 +20,39 @@ const screenshots = [
     alt: 'Ficha de producto con stock, sinopsis y detalles técnicos',
     caption: 'Ficha de producto con stock en tiempo real, sinopsis, ISBN y demás detalles técnicos.',
   },
+  {
+    src: '/images/manganihon-carrito.jpg',
+    alt: 'Carrito de compras con resumen y botón de pago',
+    caption: 'Carrito con resumen de compra, control de cantidades y acceso directo al pago con Webpay.',
+  },
+];
+
+const adminScreenshots = [
+  {
+    src: '/images/manganihon-admin-dashboard.jpg',
+    alt: 'Panel de administración con sidebar de navegación',
+    caption: 'Panel de administración: accesos rápidos y sidebar con las secciones de gestión.',
+  },
+  {
+    src: '/images/manganihon-admin-mangas.jpg',
+    alt: 'Gestión de mangas del catálogo con filtros de búsqueda',
+    caption: 'Gestión de mangas: búsqueda y filtros por categoría, estado, disponibilidad y orden.',
+  },
+  {
+    src: '/images/manganihon-admin-categorias.jpg',
+    alt: 'Gestión de categorías del catálogo',
+    caption: 'Gestión de categorías del catálogo (acción, comedia, drama, horror, etc.).',
+  },
+  {
+    src: '/images/manganihon-admin-series.jpg',
+    alt: 'Gestión de series del catálogo',
+    caption: 'Gestión de series, para agrupar los volúmenes de un mismo manga.',
+  },
+  {
+    src: '/images/manganihon-admin-pedidos.jpg',
+    alt: 'Gestión de pedidos con estado y token de Webpay',
+    caption: 'Gestión de pedidos: usuario, dirección, total, estado, método de pago y token de Webpay.',
+  },
 ];
 ---
 
@@ -59,7 +92,7 @@ const screenshots = [
         productos, series, categorías, usuarios y pedidos.
       </p>
 
-      <!-- Galería -->
+      <!-- Galería tienda -->
       <Lightbox images={screenshots} />
 
       <!-- Funcionalidades -->
@@ -101,6 +134,15 @@ const screenshots = [
           y notificaciones por correo en cada compra.
         </p>
       </div>
+
+      <!-- Galería admin -->
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Panel de administración</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-8">
+          Backoffice con sidebar de navegación y una sección por área del negocio.
+        </p>
+      </div>
+      <Lightbox images={adminScreenshots} />
 
       <div class="text-center">
         <a href="/#contacto" class="inline-block bg-accent text-black px-7 py-3 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
