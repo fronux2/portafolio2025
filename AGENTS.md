@@ -45,4 +45,6 @@ No lint, format, or typecheck scripts configured. No test framework.
 - **Notificaciones formulario:** Netlify Forms → notificación email enviada a marcosantonio.munozg@gmail.com
 
 ## Adding projects
-Edit `src/data/proyectos.json`. Each entry needs `title`, `image`, `description`, `category`, `tags[]`, and `links` (with optional `website` and `github`). Category badges use inline ternaries in the template (note: there's a `categoryColors` map in frontmatter that is unused — the template duplicates its logic inline).
+Edit `src/data/proyectos.json`. Each entry needs `title`, `image`, `description`, `category`, `tags[]`, and `links` (with optional `website` and `github`). Category badges se pintan con el mapa `categoryColors` en el frontmatter de `index.astro` — una categoría nueva hay que agregarla ahí o cae al gris por defecto.
+
+Un proyecto con página de detalle propia agrega `detail: "/slug"` (y normalmente `links.website` apunta al mismo slug, que hace que la tarjeta diga "Ver Detalle"). Las páginas de detalle viven en `src/pages/<slug>.astro` y siguen todas el mismo patrón: nav con logo MM + "Volver a proyectos", h1 con enlaces a demo/código, tags, intro, `<Lightbox images={...} />` para las galerías, sección de funcionalidades numeradas y CTA a `/#contacto`. Ejemplos: `manganihon.astro`, `certificados.astro`, `coleccion-bip.astro`.

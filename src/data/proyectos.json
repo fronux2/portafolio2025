@@ -1,5 +1,17 @@
 [
   {
+    "title": "App móvil para coleccionistas de tarjetas Bip",
+    "image": "/images/coleccion-bip.webp",
+    "description": "App Android que convierte el catálogo de 219 tarjetas Bip en una colección que se marca y se comparte: buscador, progreso en porcentaje e imagen con las tarjetas que te faltan. Funciona sin internet y sin cuenta.",
+    "category": "App Móvil",
+    "tags": ["React Native", "Expo", "TypeScript"],
+    "detail": "/coleccion-bip",
+    "links": {
+      "github": "https://github.com/fronux2/coleccion-bip-app",
+      "website": "/coleccion-bip"
+    }
+  },
+  {
     "title": "Web corporativa rápida y moderna",
     "image": "/images/web-lobos.webp",
     "description": "Migración a Next.js con Tailwind: carga instantánea y despliegue automático en Vercel.",

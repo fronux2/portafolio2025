@@ -1,0 +1,204 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Lightbox from '../components/Lightbox.astro';
+import IconGithub from '../components/icons/Github.astro';
+import IconReact from '../components/icons/React.astro';
+
+// APK de Android publicado con EAS (Expo). Mientras esté vacío, el botón de
+// descarga no se muestra (mejor eso que publicar un enlace roto).
+const descargaUrl = 'https://expo.dev/artifacts/eas/qkjB2P5Q2ghuVjzGQXUNecPNZZIxJj8L9FK34yxFElk.apk';
+
+const repoUrl = 'https://github.com/fronux2/coleccion-bip-app';
+
+const screenshots = [
+  {
+    src: '/images/coleccion-bip-catalogo.jpg',
+    alt: 'Catálogo de tarjetas Bip en grilla, con buscador',
+    caption: 'Catálogo: las 219 tarjetas en una grilla que se navega de un scroll, con buscador por nombre.',
+  },
+  {
+    src: '/images/coleccion-bip-ficha.jpg',
+    alt: 'Ficha de una tarjeta Bip con el botón La tengo',
+    caption: 'Ficha: imagen grande, fecha de emisión y el botón para marcarla como "La tengo".',
+  },
+  {
+    src: '/images/coleccion-bip-progreso.jpg',
+    alt: 'Pantalla de progreso con el porcentaje de la colección',
+    caption: 'Progreso: cuánto llevas de la colección completa, en porcentaje y en tarjetas.',
+  },
+];
+
+const extraScreenshots = [
+  {
+    src: '/images/coleccion-bip-collage.jpg',
+    alt: 'Collage con las tarjetas que faltan para completar la colección',
+    caption: 'Un toque genera la imagen con las tarjetas que te faltan, lista para mandar por WhatsApp o guardar en la galería.',
+  },
+  {
+    src: '/images/coleccion-bip-nueva-tarjeta.jpg',
+    alt: 'Formulario para agregar una tarjeta propia con foto',
+    caption: 'Tarjetas propias: si tienes una que no está en el catálogo, la agregas con una foto de la cámara o la galería.',
+  },
+  {
+    src: '/images/coleccion-bip-familia.jpg',
+    alt: 'Pantalla Familia con las colecciones importadas de otras personas',
+    caption: 'Familia: importa la colección de otra persona y mira al tiro qué tarjetas le faltan antes de un intercambio.',
+  },
+];
+---
+
+<Layout
+  title="App móvil para coleccionistas de tarjetas Bip — Marcos Muñoz"
+  description="App Android hecha con React Native y Expo: catálogo de 219 tarjetas Bip de Santiago, seguimiento de tu colección, porcentaje de avance y colecciones que se comparten entre amigos y familia."
+>
+  <section class="py-20 lg:px-32 px-6 bg-white dark:bg-gray-900 flex-1">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex items-center justify-between mb-8">
+        <a href="/" class="text-lg font-bold tracking-tight text-gray-900 dark:text-white hover:text-accent transition duration-300" aria-label="Marcos Muñoz — Inicio">
+          M<span class="text-accent">M</span>
+        </a>
+        <a href="/#proyectos" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
+          ← Volver a proyectos
+        </a>
+      </div>
+
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">App móvil para coleccionistas de tarjetas Bip</h1>
+        <div class="flex items-center gap-4 shrink-0">
+          {descargaUrl && (
+            <a href={descargaUrl} rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline">
+              Descargar para Android
+            </a>
+          )}
+          <a href={repoUrl} class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-accent transition">
+            <IconGithub class="w-5 h-5" />
+            Ver código
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">React Native</span>
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Expo</span>
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">TypeScript</span>
+        <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs px-2.5 py-1 rounded">Android</span>
+      </div>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-3xl">
+        Coleccionar tarjetas Bip en Santiago tiene un problema muy concreto: hay
+        <strong class="text-gray-900 dark:text-white font-semibold">219 diseños distintos</strong> y nadie se acuerda de
+        cuáles ya tiene. El catálogo de la comunidad existía, pero como un PDF que había que marcar a mano y en el que no
+        se puede buscar ni filtrar.
+      </p>
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-14 max-w-3xl">
+        Esta app convierte ese PDF en un catálogo vivo: buscas la tarjeta, la marcas como tuya y la app te va diciendo
+        cuánto te falta para completar la colección. Todo queda guardado en el teléfono —
+        <strong class="text-gray-900 dark:text-white font-semibold">sin crear cuenta, sin internet y sin que tus datos salgan de ahí</strong>.
+      </p>
+
+      <!-- Galería principal -->
+      <Lightbox images={screenshots} />
+
+      <!-- Funcionalidades -->
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Qué hace la app</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">1</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Catálogo completo de las 219 tarjetas con foto y fecha de emisión, con buscador para encontrar cualquiera en
+            segundos.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">2</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Marcas "La tengo" con un toque y queda guardado al instante. Si algo falla al guardar, la app te avisa en vez
+            de dejarte creyendo que quedó registrado.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">3</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Progreso de la colección en porcentaje y en tarjetas, con una celebración cuando la completas.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">4</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Genera una imagen con las tarjetas que te faltan para compartirla por WhatsApp o guardarla en la galería: el
+            que va a intercambiar contigo sabe exactamente qué buscar.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">5</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Agregas tus propias tarjetas con una foto de la cámara o la galería, con nombre, fecha y una nota.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">6</div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Sección "Familia": exportas tu colección a un archivo y otra persona la importa en su teléfono, para ver de
+            un vistazo qué le falta a cada uno.
+          </p>
+        </div>
+      </div>
+
+      <!-- Galería secundaria -->
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Compartir la colección</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-8">
+          Las funciones pensadas para el intercambio entre coleccionistas.
+        </p>
+      </div>
+      <Lightbox images={extraScreenshots} />
+
+      <!-- Cómo se armó el catálogo -->
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">De dónde salieron las 219 tarjetas</h2>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 max-w-3xl">
+        El catálogo de referencia de la comunidad es un PDF armado por Miguel Garrido ("Don Tarjetón"): siete páginas con
+        las tarjetas y sus fechas. Copiarlas a mano habría tomado días y con errores garantizados, así que escribí un
+        script que abre el PDF, extrae cada imagen en su resolución original y le empareja la fecha que le corresponde
+        según su posición en la página.
+      </p>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-16 max-w-3xl">
+        Antes de dar nada por bueno, el script arma una página de revisión con las 219 tarjetas extraídas para
+        confirmarlas de un vistazo, y separa los casos dudosos en vez de adivinar. Recién ahí se genera el catálogo
+        definitivo que viaja dentro de la app, con cada imagen en dos tamaños: una liviana para la grilla y una más
+        grande para la ficha.
+      </p>
+
+      <div class="flex items-center gap-3 p-5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 mb-16">
+        <IconReact class="w-6 h-6 shrink-0 text-gray-600 dark:text-gray-300" />
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Hecha con <strong class="text-gray-800 dark:text-gray-200">React Native y Expo</strong> en TypeScript: un mismo
+          código para Android, iOS y web. Funciona sin conexión y sin servidor, y las partes críticas están cubiertas con
+          tests automáticos para que una actualización no borre la colección de nadie.
+        </p>
+      </div>
+
+      {descargaUrl && (
+        <div class="text-center p-8 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 mb-16">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Pruébala en tu teléfono</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-xl mx-auto">
+            Descarga gratis para Android. Al abrir el archivo, el teléfono te va a pedir permiso para instalar una app
+            que no viene de Play Store: acepta y listo.
+          </p>
+          <a href={descargaUrl} rel="noopener noreferrer" class="inline-block bg-accent text-black px-7 py-3 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
+            Descargar para Android
+          </a>
+        </div>
+      )}
+
+      <div class="text-center">
+        <a href="/#contacto" class="inline-block bg-accent text-black px-7 py-3 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
+          ¿Necesitas una app así? Conversemos
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
