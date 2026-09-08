@@ -1,0 +1,8 @@
+# El subdominio .netlify.app queda siempre accesible aunque marcosm.cl sea el
+# primary domain, asi que lo redirigimos a mano para no servir el sitio en dos
+# direcciones distintas.
+[[redirects]]
+  from = "https://portafoliomarcosm.netlify.app/*"
+  to = "https://marcosm.cl/:splat"
+  status = 301
+  force = true
