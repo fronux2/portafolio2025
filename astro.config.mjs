@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://portafoliomarcosm.netlify.app',
+  site: 'https://marcosm.cl',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
