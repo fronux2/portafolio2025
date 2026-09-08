@@ -42,19 +42,104 @@ const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, '') : 'https://marco
 
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Marcos Muñoz",
-    "jobTitle": "Desarrollador Web",
-    "url": siteUrl,
-    "image": `${siteUrl}/images/portafolioWeb.webp`,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "San Bernardo",
-      "addressCountry": "CL"
-    },
-    "sameAs": [
-      "https://github.com/fronux2",
-      "https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#marcos`,
+        "name": "Marcos Muñoz",
+        "jobTitle": "Desarrollador Web",
+        "url": siteUrl,
+        "image": `${siteUrl}/images/portafolioWeb.webp`,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Bernardo",
+          "addressCountry": "CL"
+        },
+        "sameAs": [
+          "https://github.com/fronux2",
+          "https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/"
+        ],
+        "worksFor": { "@id": `${siteUrl}/#negocio` }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#negocio`,
+        "name": "Marcos Muñoz — Desarrollo Web",
+        "description": "Desarrollo de tiendas online, sitios web y landing pages para emprendedores y pequeños negocios en San Bernardo y la Región Metropolitana.",
+        "url": siteUrl,
+        "image": `${siteUrl}/images/portafolioWeb.webp`,
+        "founder": { "@id": `${siteUrl}/#marcos` },
+        "telephone": "+56926475227",
+        "email": "marcosantonio.munozg@gmail.com",
+        "priceRange": "$$",
+        "currenciesAccepted": "CLP",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Bernardo",
+          "addressRegion": "Región Metropolitana",
+          "addressCountry": "CL"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "San Bernardo" },
+          { "@type": "AdministrativeArea", "name": "Región Metropolitana" },
+          { "@type": "Country", "name": "Chile" }
+        ],
+        "sameAs": [
+          "https://github.com/fronux2",
+          "https://www.linkedin.com/in/marcos-mu%C3%B1oz-gonzalez-a32888270/"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de desarrollo web",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "priceCurrency": "CLP",
+              "price": "80000",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CLP",
+                "minPrice": "80000"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Landing Page",
+                "description": "Una página con diseño responsive, pensada para convertir visitas en contactos."
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceCurrency": "CLP",
+              "price": "150000",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CLP",
+                "minPrice": "150000"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sitio Web / Catálogo",
+                "description": "Sitio de varias secciones o páginas con catálogo de productos o servicios."
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceCurrency": "CLP",
+              "price": "280000",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CLP",
+                "minPrice": "280000"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tienda Online",
+                "description": "Tienda con catálogo de productos, carrito y proceso de compra."
+              }
+            }
+          ]
+        }
+      }
     ]
   })} />
 
