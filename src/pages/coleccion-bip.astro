@@ -4,17 +4,20 @@ import Lightbox from '../components/Lightbox.astro';
 import IconGithub from '../components/icons/Github.astro';
 import IconReact from '../components/icons/React.astro';
 
-// APK de Android publicado con EAS (Expo). Mientras esté vacío, el botón de
-// descarga no se muestra (mejor eso que publicar un enlace roto).
-const descargaUrl = 'https://expo.dev/artifacts/eas/qkjB2P5Q2ghuVjzGQXUNecPNZZIxJj8L9FK34yxFElk.apk';
+// APK del release v1.0.0 en GitHub. Apunta al archivo directo (no a la página
+// del release) para que el visitante descargue de una, sin tener que buscarlo.
+// El enlace de EAS que generó este APK caduca a los 30 días; este no.
+// Mientras esté vacío, el botón de descarga no se muestra.
+const descargaUrl =
+  'https://github.com/fronux2/coleccion-bip-app/releases/download/v1.0.0/application-bb3170a3-d32f-41a3-aebd-8093d843ca5a.apk';
 
 const repoUrl = 'https://github.com/fronux2/coleccion-bip-app';
 
 const screenshots = [
   {
     src: '/images/coleccion-bip-catalogo.jpg',
-    alt: 'Catálogo de tarjetas Bip en grilla, con buscador',
-    caption: 'Catálogo: las 219 tarjetas en una grilla que se navega de un scroll, con buscador por nombre.',
+    alt: 'Catálogo de tarjetas Bip en grilla, con buscador y filtro',
+    caption: 'Catálogo: las 219 tarjetas en una grilla, con buscador por nombre o fecha y un filtro para ver solo las que te faltan.',
   },
   {
     src: '/images/coleccion-bip-ficha.jpg',
@@ -30,19 +33,19 @@ const screenshots = [
 
 const extraScreenshots = [
   {
-    src: '/images/coleccion-bip-collage.jpg',
-    alt: 'Collage con las tarjetas que faltan para completar la colección',
-    caption: 'Un toque genera la imagen con las tarjetas que te faltan, lista para mandar por WhatsApp o guardar en la galería.',
-  },
-  {
-    src: '/images/coleccion-bip-nueva-tarjeta.jpg',
-    alt: 'Formulario para agregar una tarjeta propia con foto',
-    caption: 'Tarjetas propias: si tienes una que no está en el catálogo, la agregas con una foto de la cámara o la galería.',
-  },
-  {
     src: '/images/coleccion-bip-familia.jpg',
-    alt: 'Pantalla Familia con las colecciones importadas de otras personas',
-    caption: 'Familia: importa la colección de otra persona y mira al tiro qué tarjetas le faltan antes de un intercambio.',
+    alt: 'Pantalla Familia con la colección importada de otra persona',
+    caption: 'Familia: importas el archivo que te mandó otra persona y su colección queda guardada con su nombre.',
+  },
+  {
+    src: '/images/coleccion-bip-familia-detalle.jpg',
+    alt: 'Colección importada con las tarjetas marcadas y el botón para guardar las que faltan',
+    caption: 'Su colección completa, con lo que tiene y lo que no: antes de un intercambio sabes exactamente qué ofrecerle.',
+  },
+  {
+    src: '/images/coleccion-bip-collage.jpg',
+    alt: 'Imagen generada por la app con todas las tarjetas que faltan',
+    caption: 'Un toque genera esta imagen con las tarjetas que faltan, lista para mandar por WhatsApp o guardar en la galería.',
   },
 ];
 ---
@@ -107,8 +110,8 @@ const extraScreenshots = [
         <div class="flex gap-4">
           <div class="w-9 h-9 rounded-full bg-accent text-black font-bold flex items-center justify-center shrink-0">1</div>
           <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Catálogo completo de las 219 tarjetas con foto y fecha de emisión, con buscador para encontrar cualquiera en
-            segundos.
+            Catálogo completo de las 219 tarjetas con foto y fecha de emisión. Buscador por nombre o fecha, y un filtro
+            para ver de inmediato solo las que te faltan.
           </p>
         </div>
         <div class="flex gap-4">
