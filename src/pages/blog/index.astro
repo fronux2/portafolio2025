@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: 'Guía Completa: Cómo Crear una Tienda Online en 2025',
+    description: 'Aprende paso a paso cómo crear una tienda online profesional. Incluye plataformas, costos y mejores prácticas.',
+    slug: 'como-crear-tienda-online',
+    date: '2025-09-12',
+    readingTime: '8 min'
+  },
+  {
+    title: '¿Cuánto Cuesta Una Página Web en Chile? Precios y Presupuestos',
+    description: 'Descubre los precios reales de desarrollo web en Chile. Desde landing pages hasta tiendas online completas.',
+    slug: 'cuanto-cuesta-pagina-web',
+    date: '2025-09-11',
+    readingTime: '6 min'
+  },
+  {
+    title: 'Landing Page vs Sitio Web: ¿Cuál Necesita Tu Negocio?',
+    description: 'Entiende las diferencias entre una landing page y un sitio web. Ayudarte a elegir la opción correcta.',
+    slug: 'landing-page-vs-sitio-web',
+    date: '2025-09-10',
+    readingTime: '5 min'
+  }
+];
+---
+
+<Layout title="Blog — Marcos Muñoz" description="Artículos sobre desarrollo web, tiendas online y estrategia digital para pequeños negocios en Chile.">
+  <!-- Hero del Blog -->
+  <section class="py-20 bg-gradient-to-b from-black to-gray-800 text-white lg:px-32 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Blog</h1>
+      <p class="text-xl text-gray-300">
+        Recursos, guías y artículos sobre desarrollo web, tiendas online y cómo hacer crecer tu negocio en internet.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="py-20 bg-white dark:bg-gray-900 lg:px-32 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-8">
+        {posts.map(post => (
+          <article class="group border-l-4 border-accent pl-6 pb-8">
+            <time class="text-sm text-gray-500 dark:text-gray-400">{new Date(post.date).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-2 mb-3 group-hover:text-accent transition">
+              <a href={`/blog/${post.slug}`}>{post.title}</a>
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">{post.description}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500 dark:text-gray-400">{post.readingTime} de lectura</span>
+              <a href={`/blog/${post.slug}`} class="text-accent font-medium hover:underline">
+                Leer más →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">¿Listo para tu proyecto?</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        Si después de leer estos artículos tienes preguntas o necesitas ayuda con tu web o tienda online, estoy aquí para ayudarte.
+      </p>
+      <a href="/#contacto" class="inline-block bg-accent text-black px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
+        Contactarme
+      </a>
+    </div>
+  </section>
+</Layout>

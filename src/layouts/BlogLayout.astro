@@ -1,0 +1,87 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishedDate: string;
+  author?: string;
+  readingTime?: string;
+}
+
+const { title, description, publishedDate, author = "Marcos Muñoz", readingTime = "5 min" } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <article class="min-h-screen">
+    <!-- Hero del Blog -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-800 text-white lg:px-32 px-6">
+      <div class="max-w-3xl mx-auto">
+        <a href="/blog" class="text-accent hover:underline text-sm font-medium mb-6 inline-block">← Volver al blog</a>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+        <p class="text-xl text-gray-300 mb-6">{description}</p>
+        <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+          <span>Por {author}</span>
+          <span>•</span>
+          <time datetime={publishedDate}>{new Date(publishedDate).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          <span>•</span>
+          <span>{readingTime} de lectura</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenido -->
+    <section class="py-20 bg-white dark:bg-gray-900 lg:px-32 px-6">
+      <div class="max-w-3xl mx-auto prose dark:prose-invert prose-lg">
+        <slot />
+      </div>
+    </section>
+
+    <!-- Llamada a Acción -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800 lg:px-32 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">¿Necesitas ayuda con tu proyecto?</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+          Si te interesó este artículo y necesitas desarrollar una web o tienda online, contáctame sin compromiso.
+        </p>
+        <a href="/#contacto" class="inline-block bg-accent text-black px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition duration-300">
+          Solicitar Cotización
+        </a>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  :global(.prose) {
+    @apply max-w-none;
+  }
+
+  :global(.prose h2) {
+    @apply text-3xl font-bold mt-12 mb-6 text-gray-900 dark:text-white;
+  }
+
+  :global(.prose h3) {
+    @apply text-2xl font-bold mt-10 mb-4 text-gray-900 dark:text-white;
+  }
+
+  :global(.prose p) {
+    @apply text-gray-700 dark:text-gray-300 mb-6 leading-relaxed;
+  }
+
+  :global(.prose strong) {
+    @apply text-gray-900 dark:text-white font-semibold;
+  }
+
+  :global(.prose ul) {
+    @apply list-disc list-inside mb-6 space-y-2;
+  }
+
+  :global(.prose li) {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  :global(.prose a) {
+    @apply text-accent hover:underline;
+  }
+</style>
