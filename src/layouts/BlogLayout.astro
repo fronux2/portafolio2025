@@ -54,34 +54,104 @@ const { title, description, publishedDate, author = "Marcos Muñoz", readingTime
 
 <style>
   :global(.prose) {
-    @apply max-w-none;
+    max-width: none;
   }
 
   :global(.prose h2) {
-    @apply text-3xl font-bold mt-12 mb-6 text-gray-900 dark:text-white;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: #111827;
+  }
+
+  :global(.dark .prose h2) {
+    color: #f3f4f6;
   }
 
   :global(.prose h3) {
-    @apply text-2xl font-bold mt-10 mb-4 text-gray-900 dark:text-white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #111827;
+  }
+
+  :global(.dark .prose h3) {
+    color: #f3f4f6;
   }
 
   :global(.prose p) {
-    @apply text-gray-700 dark:text-gray-300 mb-6 leading-relaxed;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+  }
+
+  :global(.dark .prose p) {
+    color: #d1d5db;
   }
 
   :global(.prose strong) {
-    @apply text-gray-900 dark:text-white font-semibold;
+    color: #111827;
+    font-weight: 600;
+  }
+
+  :global(.dark .prose strong) {
+    color: #f3f4f6;
   }
 
   :global(.prose ul) {
-    @apply list-disc list-inside mb-6 space-y-2;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+  }
+
+  :global(.prose ul li) {
+    margin-bottom: 0.5rem;
   }
 
   :global(.prose li) {
-    @apply text-gray-700 dark:text-gray-300;
+    color: #374151;
+  }
+
+  :global(.dark .prose li) {
+    color: #d1d5db;
   }
 
   :global(.prose a) {
-    @apply text-accent hover:underline;
+    color: #06b6d4;
+  }
+
+  :global(.prose a:hover) {
+    text-decoration: underline;
+  }
+
+  :global(.prose table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  :global(.prose table th),
+  :global(.prose table td) {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    text-align: left;
+  }
+
+  :global(.dark .prose table th),
+  :global(.dark .prose table td) {
+    border-color: #4b5563;
+  }
+
+  :global(.prose table th) {
+    background-color: #f9fafb;
+    font-weight: 600;
+  }
+
+  :global(.dark .prose table th) {
+    background-color: #1f2937;
   }
 </style>
