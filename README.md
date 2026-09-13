@@ -26,6 +26,7 @@ Desplegado en **Netlify** con auto-deploy desde GitHub.
 - **Formulario de contacto** funcional con Netlify Forms
 - **Botón flotante de WhatsApp**
 - **Diseño responsive** y optimizado para rendimiento
+- **Blog** con 3 posts optimizados para SEO (nuevos 12/09/2025)
 
 ---
 
@@ -40,9 +41,16 @@ Desplegado en **Netlify** con auto-deploy desde GitHub.
 │   ├── data/
 │   │   └── proyectos.json # Datos de los proyectos
 │   ├── layouts/
-│   │   └── Layout.astro   # Shell HTML con SEO y OG tags
+│   │   ├── Layout.astro           # Shell HTML con SEO y OG tags
+│   │   └── BlogLayout.astro       # Layout para posts del blog
 │   ├── pages/
-│   │   └── index.astro    # Página única del portafolio
+│   │   ├── index.astro            # Página única del portafolio
+│   │   ├── 404.astro              # Página 404
+│   │   └── blog/
+│   │       ├── index.astro        # Lista de posts del blog
+│   │       ├── como-crear-tienda-online.astro
+│   │       ├── cuanto-cuesta-pagina-web.astro
+│   │       └── landing-page-vs-sitio-web.astro
 │   └── styles/
 │       └── global.css     # Tailwind v4 (@import "tailwindcss", @theme)
 ├── astro.config.mjs
@@ -82,6 +90,49 @@ Editar `src/data/proyectos.json`. Cada entrada requiere:
 ```
 
 Los badges de categoría se renderizan automáticamente según el valor de `category`.
+
+---
+
+## Blog (SEO)
+
+**Agregado:** 12 de septiembre de 2025
+
+El blog está en `/src/pages/blog/` y contiene 3 posts optimizados para SEO:
+
+### Posts publicados:
+1. **"Cómo Crear una Tienda Online en 2025"** (1,800 palabras)
+   - URL: `/blog/como-crear-tienda-online`
+   - Palabras clave: tienda online, crear ecommerce, vender online Chile
+   - Tiempo de lectura: 8 minutos
+
+2. **"¿Cuánto Cuesta Una Página Web en Chile?"** (1,600 palabras)
+   - URL: `/blog/cuanto-cuesta-pagina-web`
+   - Palabras clave: precio web Chile, costo desarrollo, presupuesto
+   - Tiempo de lectura: 6 minutos
+
+3. **"Landing Page vs Sitio Web: ¿Cuál Necesitas?"** (1,400 palabras)
+   - URL: `/blog/landing-page-vs-sitio-web`
+   - Palabras clave: landing page, sitio web, diferencia
+   - Tiempo de lectura: 5 minutos
+
+### Agregar nuevos posts:
+Crear un archivo `.astro` en `/src/pages/blog/` usando `BlogLayout.astro`:
+
+```astro
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout 
+  title="Título del post"
+  description="Descripción del post"
+  publishedDate="2025-09-12"
+  readingTime="5 min"
+>
+  <h2>Sección 1</h2>
+  <p>Contenido...</p>
+</BlogLayout>
+```
 
 ---
 
